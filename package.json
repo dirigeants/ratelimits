@@ -21,7 +21,7 @@
     "@types/node": "^12.12.7",
     "@typescript-eslint/eslint-plugin": "^2.6.1",
     "@typescript-eslint/parser": "^2.0.0",
-    "ava": "^2.3.0",
+    "ava": "^2.4.0",
     "eslint": "^6.6.0",
     "eslint-config-klasa": "dirigeants/klasa-lint",
     "source-map-support": "^0.5.13",

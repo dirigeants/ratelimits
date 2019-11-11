@@ -8,6 +8,10 @@ export class RateLimitManager<K = Snowflake> extends Collection<K, RateLimit> {
 	private _cooldown!: number;
 	private sweepInterval!: NodeJS.Timer | null;
 
+	/**
+	 * @param bucket The amount of times a RateLimit can drip before it's limited
+	 * @param cooldown The amount of milliseconds for the ratelimits from this manager to expire
+	 */
 	public constructor(bucket: number, cooldown: number) {
 		super();
 
@@ -16,6 +20,9 @@ export class RateLimitManager<K = Snowflake> extends Collection<K, RateLimit> {
 		Object.defineProperty(this, '_cooldown', { value: cooldown, writable: true });
 	}
 
+	/**
+	 * The amount of times a RateLimit from this manager can drip before it's limited
+	 */
 	public get bucket(): number {
 		return this._bucket;
 	}
@@ -25,6 +32,9 @@ export class RateLimitManager<K = Snowflake> extends Collection<K, RateLimit> {
 		this._bucket = value;
 	}
 
+	/**
+	 * The amount of milliseconds for the ratelimits from this manager to expire
+	 */
 	public get cooldown(): number {
 		return this._cooldown;
 	}
@@ -34,22 +44,40 @@ export class RateLimitManager<K = Snowflake> extends Collection<K, RateLimit> {
 		this._cooldown = value;
 	}
 
+	/**
+	 * Gets a RateLimit from this manager or creates it if it does not exist
+	 * @param id The id for the RateLimit
+	 */
 	public acquire(id: K): RateLimit {
 		return this.get(id) || this.create(id);
 	}
 
+	/**
+	 * Creates a RateLimit for this manager
+	 * @param id The id the RateLimit belongs to
+	 */
 	public create(id: K): RateLimit {
 		const ratelimit = new RateLimit(this._bucket, this._cooldown);
 		this.set(id, ratelimit);
 		return ratelimit;
 	}
 
+	/**
+	 * Wraps Collection's set method to set interval to sweep inactive RateLimits
+	 * @param id The id the RateLimit belongs to
+	 * @param ratelimit The RateLimit to set
+	 */
 	public set(id: K, ratelimit: RateLimit): this {
 		if (!(ratelimit instanceof RateLimit)) throw new Error('Invalid RateLimit');
 		if (!this.sweepInterval) this.sweepInterval = setInterval(this.sweep.bind(this), 30000);
 		return super.set(id, ratelimit);
 	}
 
+	/**
+	 * Wraps Collection's sweep method to clear the interval when this manager is empty
+	 * @param fn The filter function
+	 * @param thisArg The this for the sweep
+	 */
 	public sweep(fn: (value: RateLimit, key: K, collection: this) => boolean = (rl): boolean => rl.expired, thisArg?: any): number {
 		const amount = super.sweep(fn, thisArg);
 

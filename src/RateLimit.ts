@@ -5,9 +5,22 @@ export class RateLimit {
 	private remaining: number;
 	private time: number;
 
+	/**
+	 * @param bucket The number of requests before this is limited
+	 * @param cooldown The amount of milliseconds for this ratelimit to expire
+	 */
 	public constructor(bucket: number, cooldown: number) {
+		/**
+		 * The number of requests before this is limited
+		 */
 		this.bucket = bucket;
+
+		/**
+		 * The amount of milliseconds for the ratelimit to expire
+		 */
 		this.cooldown = cooldown;
+
+		this.reset();
 	}
 
 	public get expired(): boolean {

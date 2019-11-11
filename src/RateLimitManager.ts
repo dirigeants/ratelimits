@@ -1,8 +1,8 @@
 import { Snowflake } from 'discord.js';
 import Collection, { CollectionConstructor } from '@discordjs/collection';
-import RateLimit from './RateLimit';
+import { RateLimit } from './RateLimit';
 
-export default class RateLimitManager<K = Snowflake> extends Collection<K, RateLimit> {
+export class RateLimitManager<K = Snowflake> extends Collection<K, RateLimit> {
 
 	private _bucket!: number;
 	private _cooldown!: number;

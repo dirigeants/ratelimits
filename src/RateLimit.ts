@@ -1,4 +1,4 @@
-export default class RateLimit {
+export class RateLimit {
 
 	public bucket: number;
 	public cooldown: number;

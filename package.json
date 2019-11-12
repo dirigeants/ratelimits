@@ -18,6 +18,7 @@
     "node": ">=10.1.0"
   },
   "devDependencies": {
+    "@klasa/utils": "^0.0.2",
     "@types/node": "^12.12.7",
     "@typescript-eslint/eslint-plugin": "^2.6.1",
     "@typescript-eslint/parser": "^2.0.0",

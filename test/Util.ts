@@ -17,12 +17,15 @@ ava('Basic Drip', (test): void => {
 	const ratelimit = manager.acquire('Hello, world');
 	ratelimit.drip()
 		.drip();
-	test.throws(ratelimit.drip.bind(ratelimit), 'Ratelimited');
+	test.throws(ratelimit.drip.bind(ratelimit), {
+		instanceOf: Error,
+		message: 'Ratelimited'
+	});
 });
 
 ava('Proper resetting', async (test): Promise<void> => {
 	test.plan(2);
-	const manager = new RateLimitManager(2, 10000);
+	const manager = new RateLimitManager(2, 1000);
 
 	const ratelimit = manager.acquire('Hello, world');
 	ratelimit.drip()
@@ -30,8 +33,8 @@ ava('Proper resetting', async (test): Promise<void> => {
 
 	test.is(ratelimit.limited, true);
 
-	// Sleep for 12 seconds because of how timers work.
-	await sleep(12000);
+	// Sleep for 1.2 seconds because of how timers work.
+	await sleep(1200);
 
 	test.is(ratelimit.limited, false);
 });

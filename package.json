@@ -35,7 +35,6 @@
     "url": "https://github.com/dirigeants/ratelimits"
   },
   "ava": {
-    "compileEnhancements": false,
     "extensions": [
       "ts"
     ],

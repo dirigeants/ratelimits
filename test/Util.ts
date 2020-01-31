@@ -33,7 +33,7 @@ ava('Proper resetting', async (test): Promise<void> => {
 
 	test.is(ratelimit.limited, true);
 
-	// Sleep for 12 seconds because of how timers work.
+	// Sleep for 1.2 seconds because of how timers work.
 	await sleep(1200);
 
 	test.is(ratelimit.limited, false);

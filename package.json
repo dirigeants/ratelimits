@@ -18,10 +18,12 @@
     "node": ">=10.1.0"
   },
   "devDependencies": {
+    "@klasa/utils": "^0.0.2",
     "@types/node": "^13.5.3",
     "@typescript-eslint/eslint-plugin": "^2.18.0",
     "@typescript-eslint/parser": "^2.18.0",
     "ava": "^3.1.0",
+    "discord.js": "discordjs/discord.js",
     "eslint": "^6.8.0",
     "eslint-config-klasa": "dirigeants/klasa-lint",
     "source-map-support": "^0.5.16",
@@ -45,5 +47,8 @@
       "ts-node/register",
       "source-map-support/register"
     ]
+  },
+  "dependencies": {
+    "@discordjs/collection": "^0.1.3"
   }
 }

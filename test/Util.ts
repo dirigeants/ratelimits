@@ -17,7 +17,10 @@ ava('Basic Drip', (test): void => {
 	const ratelimit = manager.acquire('Hello, world');
 	ratelimit.drip()
 		.drip();
-	test.throws(ratelimit.drip.bind(ratelimit), 'Ratelimited');
+	test.throws(ratelimit.drip.bind(ratelimit), {
+		instanceOf: Error,
+		message: 'Ratelimited'
+	});
 });
 
 ava('Proper resetting', async (test): Promise<void> => {

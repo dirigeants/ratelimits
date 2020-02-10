@@ -8,7 +8,9 @@
     "build": "tsc",
     "test": "ava",
     "test:lint": "eslint --ext ts src test",
-    "test:coverage": "yarn coverage && nyc check-coverage --lines 90 --functions 90 --branches 90",
+    "test:coverage": "npx nyc check-coverage --lines 90 --functions 90 --branches 90",
+    "coverage": "npx nyc --require ts-node/register --require source-map-support/register npm test",
+    "coverage:report": "npx nyc report --reporter=html",
     "lint": "eslint --fix --ext ts src test"
   },
   "keywords": [],
@@ -18,6 +20,7 @@
     "node": ">=10.1.0"
   },
   "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@klasa/utils": "^0.0.4",
     "@types/node": "^13.7.0",
     "@typescript-eslint/eslint-plugin": "^2.19.0",
@@ -26,6 +29,7 @@
     "discord.js": "discordjs/discord.js",
     "eslint": "^6.8.0",
     "eslint-config-klasa": "dirigeants/klasa-lint",
+    "nyc": "^15.0.0",
     "source-map-support": "^0.5.16",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5"

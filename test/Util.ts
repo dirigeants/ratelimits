@@ -37,5 +37,5 @@ ava('Proper resetting', async (test): Promise<void> => {
 	await sleep(1200);
 
 	test.is(ratelimit.limited, false);
-	test.notThrows(ratelimit.drip())
+	test.notThrows(() => ratelimit.drip())
 });

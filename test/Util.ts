@@ -74,16 +74,16 @@ ava('Proper resetting', async (test): Promise<void> => {
 	ratelimit.drip()
 		.drip();
 
-	test.is(ratelimit.limited, true);
+	test.true(ratelimit.limited);
 
 	// Sleep for 1.2 seconds because of how timers work.
 	await sleep(1200);
 
-	test.is(ratelimit.limited, false);
+	test.false(ratelimit.limited);
 	test.notThrows(ratelimit.drip.bind(ratelimit));
 });
 
-ava('Proper sweeping', async (test): Promise<void> => {
+ava('Proper sweeping (everything)', async (test): Promise<void> => {
 	const manager = new RateLimitManager(2, 1000);
 
 	manager.acquire('one').drip();
@@ -93,6 +93,21 @@ ava('Proper sweeping', async (test): Promise<void> => {
 	manager.sweep();
 
 	test.false(manager.has('one'));
+});
+
+ava('Proper sweeping (not everything)', async (test): Promise<void> => {
+	test.plan(2);
+	const manager = new RateLimitManager(2, 1000);
+
+	manager.acquire('one').drip();
+
+	// Sleep for 1.2 seconds because of how timers work.
+	await sleep(1200);
+	manager.acquire('two').drip();
+	manager.sweep();
+
+	test.false(manager.has('one'));
+	test.true(manager.has('two'));
 });
 
 ava('Clones are just Collections', async (test): Promise<void> => {

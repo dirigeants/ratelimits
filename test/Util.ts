@@ -49,7 +49,7 @@ ava('Change Cooldown', (test): void => {
 
 	test.is(manager.cooldown, 30000);
 	test.is(ratelimit.cooldown, 30000);
-	manager.bucket = 330000;
+	manager.cooldown = 330000;
 	test.is(manager.cooldown, 330000);
 	test.is(ratelimit.cooldown, 330000);
 });
@@ -84,13 +84,9 @@ ava('Proper resetting', async (test): Promise<void> => {
 });
 
 ava('Proper sweeping', async (test): Promise<void> => {
-	test.plan(2);
 	const manager = new RateLimitManager(2, 1000);
 
-	const ratelimit = manager.acquire('one');
-	ratelimit.drip();
-
-	test.is(ratelimit.limited, true);
+	manager.acquire('one').drip();
 
 	// Sleep for 1.2 seconds because of how timers work.
 	await sleep(1200);

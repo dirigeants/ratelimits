@@ -18,7 +18,11 @@ ava('Acquiring', (test): void => {
 ava('Set guard', (test): void => {
 	const manager = new RateLimitManager(2, 30000);
 
-	test.throws(() => manager.set('foo', 'bar'), {
+	test.throws(() => {
+		// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+		// @ts-ignore
+		manager.set('foo', 'bar');
+	}, {
 		instanceOf: Error,
 		message: 'Invalid RateLimit'
 	});

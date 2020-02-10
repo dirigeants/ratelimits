@@ -24,7 +24,7 @@ ava('Basic Drip', (test): void => {
 });
 
 ava('Proper resetting', async (test): Promise<void> => {
-	test.plan(2);
+	test.plan(3);
 	const manager = new RateLimitManager(2, 1000);
 
 	const ratelimit = manager.acquire('Hello, world');
@@ -37,4 +37,5 @@ ava('Proper resetting', async (test): Promise<void> => {
 	await sleep(1200);
 
 	test.is(ratelimit.limited, false);
+	test.notThrows(ratelimit.drip())
 });

@@ -52,6 +52,6 @@
     ]
   },
   "dependencies": {
-    "@discordjs/collection": "^0.1.4"
+    "@discordjs/collection": "^0.1.5"
   }
 }

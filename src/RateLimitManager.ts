@@ -88,8 +88,8 @@ export class RateLimitManager<K = string> extends Cache<K, RateLimit> {
 		return amount;
 	}
 
-	public static get [Symbol.species](): CollectionConstructor {
-		return Collection as unknown as CollectionConstructor;
+	public static get [Symbol.species](): typeof Cache {
+		return Cache;
 	}
 
 }

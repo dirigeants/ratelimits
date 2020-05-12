@@ -1,7 +1,7 @@
 import ava from 'ava';
 import { RateLimitManager } from '../dist';
 import { sleep } from '@klasa/utils';
-import { Cache } from '@klasa/Cache';
+import { Cache } from '@klasa/cache';
 
 // ... others
 

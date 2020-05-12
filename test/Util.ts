@@ -115,6 +115,6 @@ ava('Clones are just Caches', async (test): Promise<void> => {
 
 	const manager = new RateLimitManager(2, 1000);
 
-	test.not(manager.clone(), { instanceOf: RateLimitManager });
-	test.is(manager.clone(), { instanceOf: Cache });
+	test.false(manager.clone() instanceof RateLimitManager);
+	test.true(manager.clone() instanceof Cache);
 });

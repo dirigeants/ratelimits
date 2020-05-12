@@ -1,8 +1,7 @@
-import { Snowflake } from 'discord.js';
-import Collection, { CollectionConstructor } from '@discordjs/collection';
+import { Cache } from '@klasa/cache';
 import { RateLimit } from './RateLimit';
 
-export class RateLimitManager<K = Snowflake> extends Collection<K, RateLimit> {
+export class RateLimitManager<K = string> extends Cache<K, RateLimit> {
 
 	private _bucket!: number;
 	private _cooldown!: number;
@@ -89,8 +88,8 @@ export class RateLimitManager<K = Snowflake> extends Collection<K, RateLimit> {
 		return amount;
 	}
 
-	public static get [Symbol.species](): CollectionConstructor {
-		return Collection as unknown as CollectionConstructor;
+	public static get [Symbol.species](): typeof Cache {
+		return Cache;
 	}
 
 }

@@ -1,7 +1,7 @@
 import ava from 'ava';
 import { RateLimitManager } from '../dist';
 import { sleep } from '@klasa/utils';
-import Collection from '@discordjs/collection';
+import { Cache } from '@klasa/Cache';
 
 // ... others
 
@@ -110,11 +110,11 @@ ava('Proper sweeping (not everything)', async (test): Promise<void> => {
 	test.true(manager.has('two'));
 });
 
-ava('Clones are just Collections', async (test): Promise<void> => {
+ava('Clones are just Caches', async (test): Promise<void> => {
 	test.plan(2);
 
 	const manager = new RateLimitManager(2, 1000);
 
 	test.false(manager.clone() instanceof RateLimitManager);
-	test.true(manager.clone() instanceof Collection);
+	test.true(manager.clone() instanceof Cache);
 });

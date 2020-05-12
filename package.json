@@ -11,7 +11,8 @@
     "test:coverage": "npx nyc check-coverage --lines 90 --functions 90 --branches 90",
     "coverage": "npx nyc --require ts-node/register --require source-map-support/register npm test",
     "coverage:report": "npx nyc report --reporter=html",
-    "lint": "eslint --fix --ext ts src test"
+    "lint": "eslint --fix --ext ts src test",
+    "docs": "typedoc"
   },
   "keywords": [],
   "author": "dirigeants",

@@ -1,9 +1,0 @@
-node_modules/
-package-lock.json
-
-out/
-coverage/
-.nyc_output/
-dist/
-docs/
-test-results.xml

@@ -1,0 +1,3795 @@
+{
+	"id": 0,
+	"name": "@klasa/ratelimits",
+	"kind": 0,
+	"flags": {},
+	"originalName": "",
+	"children": [
+		{
+			"id": 1,
+			"name": "\"RateLimit\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/runner/work/ratelimits/ratelimits/src/RateLimit.ts",
+			"children": [
+				{
+					"id": 2,
+					"name": "RateLimit",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 7,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"comment": {},
+							"signatures": [
+								{
+									"id": 8,
+									"name": "new RateLimit",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {},
+									"parameters": [
+										{
+											"id": 9,
+											"name": "bucket",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"shortText": "The number of requests before this is limited"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 10,
+											"name": "cooldown",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"shortText": "The amount of milliseconds for this ratelimit to expire\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 2,
+										"name": "RateLimit"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/RateLimit.ts",
+									"line": 6,
+									"character": 22
+								}
+							]
+						},
+						{
+							"id": 3,
+							"name": "bucket",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/RateLimit.ts",
+									"line": 3,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 4,
+							"name": "cooldown",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/RateLimit.ts",
+									"line": 4,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 5,
+							"name": "remaining",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/RateLimit.ts",
+									"line": 5,
+									"character": 18
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 6,
+							"name": "time",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/RateLimit.ts",
+									"line": 6,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 11,
+							"name": "expired",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Whether this RateLimit is expired or not, allowing the bucket to be reset"
+							},
+							"getSignature": [
+								{
+									"id": 12,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Whether this RateLimit is expired or not, allowing the bucket to be reset"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/RateLimit.ts",
+									"line": 29,
+									"character": 19
+								}
+							]
+						},
+						{
+							"id": 13,
+							"name": "limited",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Whether this RateLimit is limited or not"
+							},
+							"getSignature": [
+								{
+									"id": 14,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Whether this RateLimit is limited or not"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/RateLimit.ts",
+									"line": 36,
+									"character": 19
+								}
+							]
+						},
+						{
+							"id": 15,
+							"name": "remainingTime",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The remaining time in milliseconds before this RateLimit instance is reset"
+							},
+							"getSignature": [
+								{
+									"id": 16,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "The remaining time in milliseconds before this RateLimit instance is reset"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/RateLimit.ts",
+									"line": 43,
+									"character": 25
+								}
+							]
+						},
+						{
+							"id": 17,
+							"name": "drip",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 18,
+									"name": "drip",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Drips the RateLimit bucket"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "this"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/RateLimit.ts",
+									"line": 50,
+									"character": 12
+								}
+							]
+						},
+						{
+							"id": 19,
+							"name": "reset",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 20,
+									"name": "reset",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Resets the RateLimit back to it's full state"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "this"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/RateLimit.ts",
+									"line": 61,
+									"character": 13
+								}
+							]
+						},
+						{
+							"id": 21,
+							"name": "resetRemaining",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 22,
+									"name": "resetRemaining",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Resets the RateLimit's remaining uses back to full state"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "this"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/RateLimit.ts",
+									"line": 68,
+									"character": 22
+								}
+							]
+						},
+						{
+							"id": 23,
+							"name": "resetTime",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 24,
+									"name": "resetTime",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Resets the RateLimit's reset time back to full state"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "this"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/RateLimit.ts",
+									"line": 80,
+									"character": 17
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								7
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								3,
+								4,
+								5,
+								6
+							]
+						},
+						{
+							"title": "Accessors",
+							"kind": 262144,
+							"children": [
+								11,
+								13,
+								15
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								17,
+								19,
+								21,
+								23
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/RateLimit.ts",
+							"line": 1,
+							"character": 22
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						2
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/RateLimit.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 25,
+			"name": "\"RateLimitManager\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/runner/work/ratelimits/ratelimits/src/RateLimitManager.ts",
+			"children": [
+				{
+					"id": 26,
+					"name": "RateLimitManager",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"typeParameter": [
+						{
+							"id": 27,
+							"name": "K",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"children": [
+						{
+							"id": 31,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"comment": {},
+							"signatures": [
+								{
+									"id": 32,
+									"name": "new RateLimitManager",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {},
+									"parameters": [
+										{
+											"id": 33,
+											"name": "bucket",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"shortText": "The amount of times a RateLimit can drip before it's limited"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 34,
+											"name": "cooldown",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"shortText": "The amount of milliseconds for the ratelimits from this manager to expire\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 26,
+										"name": "RateLimitManager"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/RateLimitManager.ts",
+									"line": 8,
+									"character": 45
+								}
+							]
+						},
+						{
+							"id": 28,
+							"name": "_bucket",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/RateLimitManager.ts",
+									"line": 6,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 29,
+							"name": "_cooldown",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/RateLimitManager.ts",
+									"line": 7,
+									"character": 18
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 189,
+							"name": "size",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isReadonly": true
+							},
+							"sources": [
+								{
+									"fileName": "node_modules/typescript/lib/lib.es2015.collection.d.ts",
+									"line": 28,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 189,
+								"name": "Map.size"
+							}
+						},
+						{
+							"id": 30,
+							"name": "sweepInterval",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/RateLimitManager.ts",
+									"line": 8,
+									"character": 22
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"name": "Timer"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									}
+								]
+							}
+						},
+						{
+							"id": 35,
+							"name": "bucket",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The amount of times a RateLimit from this manager can drip before it's limited"
+							},
+							"getSignature": [
+								{
+									"id": 36,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "The amount of times a RateLimit from this manager can drip before it's limited"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"setSignature": [
+								{
+									"id": 37,
+									"name": "__set",
+									"kind": 1048576,
+									"kindString": "Set signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "The amount of times a RateLimit from this manager can drip before it's limited"
+									},
+									"parameters": [
+										{
+											"id": 38,
+											"name": "value",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/RateLimitManager.ts",
+									"line": 25,
+									"character": 18
+								},
+								{
+									"fileName": "src/RateLimitManager.ts",
+									"line": 29,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 39,
+							"name": "cooldown",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The amount of milliseconds for the ratelimits from this manager to expire"
+							},
+							"getSignature": [
+								{
+									"id": 40,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "The amount of milliseconds for the ratelimits from this manager to expire"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"setSignature": [
+								{
+									"id": 41,
+									"name": "__set",
+									"kind": 1048576,
+									"kindString": "Set signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "The amount of milliseconds for the ratelimits from this manager to expire"
+									},
+									"parameters": [
+										{
+											"id": 42,
+											"name": "value",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/RateLimitManager.ts",
+									"line": 37,
+									"character": 20
+								},
+								{
+									"fileName": "src/RateLimitManager.ts",
+									"line": 41,
+									"character": 20
+								}
+							]
+						},
+						{
+							"id": 64,
+							"name": "first",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The first item in this Cache"
+							},
+							"getSignature": [
+								{
+									"id": 65,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "The first item in this Cache"
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "tuple",
+												"elements": [
+													{
+														"type": "typeParameter",
+														"name": "K"
+													},
+													{
+														"type": "reference",
+														"id": 2,
+														"name": "RateLimit"
+													}
+												]
+											},
+											{
+												"type": "intrinsic",
+												"name": "null"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 64,
+										"name": "Cache.first"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+									"line": 8,
+									"character": 13
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 64,
+								"name": "Cache.first"
+							}
+						},
+						{
+							"id": 68,
+							"name": "firstKey",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The first key of this cache"
+							},
+							"getSignature": [
+								{
+									"id": 69,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "The first key of this cache"
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "K"
+											},
+											{
+												"type": "intrinsic",
+												"name": "null"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 68,
+										"name": "Cache.firstKey"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+									"line": 16,
+									"character": 16
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 68,
+								"name": "Cache.firstKey"
+							}
+						},
+						{
+							"id": 66,
+							"name": "firstValue",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The first value of this cache"
+							},
+							"getSignature": [
+								{
+									"id": 67,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "The first value of this cache"
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"id": 2,
+												"name": "RateLimit"
+											},
+											{
+												"type": "intrinsic",
+												"name": "null"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 66,
+										"name": "Cache.firstValue"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+									"line": 12,
+									"character": 18
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 66,
+								"name": "Cache.firstValue"
+							}
+						},
+						{
+							"id": 70,
+							"name": "last",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The last item in this cache"
+							},
+							"getSignature": [
+								{
+									"id": 71,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "The last item in this cache"
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "tuple",
+												"elements": [
+													{
+														"type": "typeParameter",
+														"name": "K"
+													},
+													{
+														"type": "reference",
+														"id": 2,
+														"name": "RateLimit"
+													}
+												]
+											},
+											{
+												"type": "intrinsic",
+												"name": "null"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 70,
+										"name": "Cache.last"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+									"line": 20,
+									"character": 12
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 70,
+								"name": "Cache.last"
+							}
+						},
+						{
+							"id": 74,
+							"name": "lastKey",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The last key of this cache"
+							},
+							"getSignature": [
+								{
+									"id": 75,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "The last key of this cache"
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "K"
+											},
+											{
+												"type": "intrinsic",
+												"name": "null"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 74,
+										"name": "Cache.lastKey"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+									"line": 28,
+									"character": 15
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 74,
+								"name": "Cache.lastKey"
+							}
+						},
+						{
+							"id": 72,
+							"name": "lastValue",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The last value of this cache"
+							},
+							"getSignature": [
+								{
+									"id": 73,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "The last value of this cache"
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"id": 2,
+												"name": "RateLimit"
+											},
+											{
+												"type": "intrinsic",
+												"name": "null"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 72,
+										"name": "Cache.lastValue"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+									"line": 24,
+									"character": 17
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 72,
+								"name": "Cache.lastValue"
+							}
+						},
+						{
+							"id": 62,
+							"name": "[Symbol.species]",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isPublic": true,
+								"isStatic": true,
+								"isExported": true
+							},
+							"getSignature": [
+								{
+									"id": 63,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "query",
+										"queryType": {
+											"type": "reference",
+											"name": "Cache"
+										}
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/RateLimitManager.ts",
+									"line": 91,
+									"character": 35
+								}
+							]
+						},
+						{
+							"id": 43,
+							"name": "acquire",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 44,
+									"name": "acquire",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Gets a RateLimit from this manager or creates it if it does not exist"
+									},
+									"parameters": [
+										{
+											"id": 45,
+											"name": "id",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "The id for the RateLimit\n"
+											},
+											"type": {
+												"type": "typeParameter",
+												"name": "K"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 2,
+										"name": "RateLimit"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/RateLimitManager.ts",
+									"line": 50,
+									"character": 15
+								}
+							]
+						},
+						{
+							"id": 169,
+							"name": "clear",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 170,
+									"name": "clear",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 169,
+										"name": "Map.clear"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/typescript/lib/lib.es2015.collection.d.ts",
+									"line": 22,
+									"character": 9
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 169,
+								"name": "Map.clear"
+							}
+						},
+						{
+							"id": 152,
+							"name": "clone",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 153,
+									"name": "clone",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Returns a shallow clone of this Cache"
+									},
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "K"
+											},
+											{
+												"type": "reference",
+												"id": 2,
+												"name": "RateLimit"
+											}
+										],
+										"name": "Cache"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 152,
+										"name": "Cache.clone"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+									"line": 87,
+									"character": 9
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 152,
+								"name": "Cache.clone"
+							}
+						},
+						{
+							"id": 154,
+							"name": "concat",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 155,
+									"name": "concat",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Returns a new Cache with this and other caches together"
+									},
+									"parameters": [
+										{
+											"id": 156,
+											"name": "caches",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true,
+												"isRest": true
+											},
+											"comment": {
+												"text": "Other caches to include in the new cache\n"
+											},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"typeArguments": [
+														{
+															"type": "typeParameter",
+															"name": "K"
+														},
+														{
+															"type": "reference",
+															"id": 2,
+															"name": "RateLimit"
+														}
+													],
+													"name": "Cache"
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "K"
+											},
+											{
+												"type": "reference",
+												"id": 2,
+												"name": "RateLimit"
+											}
+										],
+										"name": "Cache"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 154,
+										"name": "Cache.concat"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+									"line": 92,
+									"character": 10
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 154,
+								"name": "Cache.concat"
+							}
+						},
+						{
+							"id": 46,
+							"name": "create",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 47,
+									"name": "create",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Creates a RateLimit for this manager"
+									},
+									"parameters": [
+										{
+											"id": 48,
+											"name": "id",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "The id the RateLimit belongs to\n"
+											},
+											"type": {
+												"type": "typeParameter",
+												"name": "K"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 2,
+										"name": "RateLimit"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/RateLimitManager.ts",
+									"line": 58,
+									"character": 14
+								}
+							]
+						},
+						{
+							"id": 171,
+							"name": "delete",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 172,
+									"name": "delete",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 173,
+											"name": "key",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "typeParameter",
+												"name": "K"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 171,
+										"name": "Map.delete"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/typescript/lib/lib.es2015.collection.d.ts",
+									"line": 23,
+									"character": 10
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 171,
+								"name": "Map.delete"
+							}
+						},
+						{
+							"id": 157,
+							"name": "equals",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 158,
+									"name": "equals",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Naive equality compare function"
+									},
+									"parameters": [
+										{
+											"id": 159,
+											"name": "cache",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "The cache to compare this against\n"
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "K"
+													},
+													{
+														"type": "reference",
+														"id": 2,
+														"name": "RateLimit"
+													}
+												],
+												"name": "Cache"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 157,
+										"name": "Cache.equals"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+									"line": 97,
+									"character": 10
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 157,
+								"name": "Cache.equals"
+							}
+						},
+						{
+							"id": 131,
+							"name": "every",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 132,
+									"name": "every",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Tests if every entry in this cache meets a condition"
+									},
+									"parameters": [
+										{
+											"id": 133,
+											"name": "fn",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "The function to test the condition"
+											},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 134,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {
+														"isExported": true
+													},
+													"signatures": [
+														{
+															"id": 135,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {
+																"isExported": true
+															},
+															"parameters": [
+																{
+																	"id": 136,
+																	"name": "value",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "reference",
+																		"id": 2,
+																		"name": "RateLimit"
+																	}
+																},
+																{
+																	"id": 137,
+																	"name": "key",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "typeParameter",
+																		"name": "K"
+																	}
+																},
+																{
+																	"id": 138,
+																	"name": "map",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "this"
+																	}
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "boolean"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+															"line": 76,
+															"character": 13
+														}
+													]
+												}
+											}
+										},
+										{
+											"id": 139,
+											"name": "thisArg",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true,
+												"isOptional": true
+											},
+											"comment": {
+												"text": "Optional binding for the fn param\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 131,
+										"name": "Cache.every"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+									"line": 76,
+									"character": 9
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 131,
+								"name": "Cache.every"
+							}
+						},
+						{
+							"id": 103,
+							"name": "filter",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 104,
+									"name": "filter",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Returns a new filtered Cache based on the filter function"
+									},
+									"parameters": [
+										{
+											"id": 105,
+											"name": "fn",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "Function used to determine what entries are in the new Cache"
+											},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 106,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {
+														"isExported": true
+													},
+													"signatures": [
+														{
+															"id": 107,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {
+																"isExported": true
+															},
+															"parameters": [
+																{
+																	"id": 108,
+																	"name": "value",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "reference",
+																		"id": 2,
+																		"name": "RateLimit"
+																	}
+																},
+																{
+																	"id": 109,
+																	"name": "key",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "typeParameter",
+																		"name": "K"
+																	}
+																},
+																{
+																	"id": 110,
+																	"name": "map",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "this"
+																	}
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "boolean"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+															"line": 58,
+															"character": 14
+														}
+													]
+												}
+											}
+										},
+										{
+											"id": 111,
+											"name": "thisArg",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true,
+												"isOptional": true
+											},
+											"comment": {
+												"text": "Optional binding for the fn param\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "K"
+											},
+											{
+												"type": "reference",
+												"id": 2,
+												"name": "RateLimit"
+											}
+										],
+										"name": "Cache"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 103,
+										"name": "Cache.filter"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+									"line": 58,
+									"character": 10
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 103,
+								"name": "Cache.filter"
+							}
+						},
+						{
+							"id": 76,
+							"name": "find",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 77,
+									"name": "find",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Finds an entry from this Cache"
+									},
+									"parameters": [
+										{
+											"id": 78,
+											"name": "fn",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "Function used to find what you are looking for"
+											},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 79,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {
+														"isExported": true
+													},
+													"signatures": [
+														{
+															"id": 80,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {
+																"isExported": true
+															},
+															"parameters": [
+																{
+																	"id": 81,
+																	"name": "value",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "reference",
+																		"id": 2,
+																		"name": "RateLimit"
+																	}
+																},
+																{
+																	"id": 82,
+																	"name": "key",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "typeParameter",
+																		"name": "K"
+																	}
+																},
+																{
+																	"id": 83,
+																	"name": "map",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "this"
+																	}
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "boolean"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+															"line": 34,
+															"character": 12
+														}
+													]
+												}
+											}
+										},
+										{
+											"id": 84,
+											"name": "thisArg",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true,
+												"isOptional": true
+											},
+											"comment": {
+												"text": "Optional binding for the fn param\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "tuple",
+												"elements": [
+													{
+														"type": "typeParameter",
+														"name": "K"
+													},
+													{
+														"type": "reference",
+														"id": 2,
+														"name": "RateLimit"
+													}
+												]
+											},
+											{
+												"type": "intrinsic",
+												"name": "void"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 76,
+										"name": "Cache.find"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+									"line": 34,
+									"character": 8
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 76,
+								"name": "Cache.find"
+							}
+						},
+						{
+							"id": 85,
+							"name": "findKey",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 86,
+									"name": "findKey",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Finds a key from this Cache"
+									},
+									"parameters": [
+										{
+											"id": 87,
+											"name": "fn",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "Function used to find what you are looking for"
+											},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 88,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {
+														"isExported": true
+													},
+													"signatures": [
+														{
+															"id": 89,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {
+																"isExported": true
+															},
+															"parameters": [
+																{
+																	"id": 90,
+																	"name": "value",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "reference",
+																		"id": 2,
+																		"name": "RateLimit"
+																	}
+																},
+																{
+																	"id": 91,
+																	"name": "key",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "typeParameter",
+																		"name": "K"
+																	}
+																},
+																{
+																	"id": 92,
+																	"name": "map",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "this"
+																	}
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "boolean"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+															"line": 40,
+															"character": 15
+														}
+													]
+												}
+											}
+										},
+										{
+											"id": 93,
+											"name": "thisArg",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true,
+												"isOptional": true
+											},
+											"comment": {
+												"text": "Optional binding for the fn param\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "K"
+											},
+											{
+												"type": "intrinsic",
+												"name": "void"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 85,
+										"name": "Cache.findKey"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+									"line": 40,
+									"character": 11
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 85,
+								"name": "Cache.findKey"
+							}
+						},
+						{
+							"id": 94,
+							"name": "findValue",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 95,
+									"name": "findValue",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Finds a value from this Cache"
+									},
+									"parameters": [
+										{
+											"id": 96,
+											"name": "fn",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "Function used to find what you are looking for"
+											},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 97,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {
+														"isExported": true
+													},
+													"signatures": [
+														{
+															"id": 98,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {
+																"isExported": true
+															},
+															"parameters": [
+																{
+																	"id": 99,
+																	"name": "value",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "reference",
+																		"id": 2,
+																		"name": "RateLimit"
+																	}
+																},
+																{
+																	"id": 100,
+																	"name": "key",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "typeParameter",
+																		"name": "K"
+																	}
+																},
+																{
+																	"id": 101,
+																	"name": "map",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "this"
+																	}
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "boolean"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+															"line": 46,
+															"character": 17
+														}
+													]
+												}
+											}
+										},
+										{
+											"id": 102,
+											"name": "thisArg",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true,
+												"isOptional": true
+											},
+											"comment": {
+												"text": "Optional binding for the fn param\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"id": 2,
+												"name": "RateLimit"
+											},
+											{
+												"type": "intrinsic",
+												"name": "void"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 94,
+										"name": "Cache.findValue"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+									"line": 46,
+									"character": 13
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 94,
+								"name": "Cache.findValue"
+							}
+						},
+						{
+							"id": 174,
+							"name": "forEach",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 175,
+									"name": "forEach",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 176,
+											"name": "callbackfn",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 177,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {
+														"isExported": true
+													},
+													"signatures": [
+														{
+															"id": 178,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {
+																"isExported": true
+															},
+															"parameters": [
+																{
+																	"id": 179,
+																	"name": "value",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "reference",
+																		"id": 2,
+																		"name": "RateLimit"
+																	}
+																},
+																{
+																	"id": 180,
+																	"name": "key",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "typeParameter",
+																		"name": "K"
+																	}
+																},
+																{
+																	"id": 181,
+																	"name": "map",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "reference",
+																		"typeArguments": [
+																			{
+																				"type": "typeParameter",
+																				"name": "K"
+																			},
+																			{
+																				"type": "reference",
+																				"id": 2,
+																				"name": "RateLimit"
+																			}
+																		],
+																		"name": "Map"
+																	}
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "node_modules/typescript/lib/lib.es2015.collection.d.ts",
+															"line": 24,
+															"character": 23
+														}
+													]
+												}
+											}
+										},
+										{
+											"id": 182,
+											"name": "thisArg",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true,
+												"isOptional": true
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 174,
+										"name": "Map.forEach"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/typescript/lib/lib.es2015.collection.d.ts",
+									"line": 24,
+									"character": 11
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 174,
+								"name": "Map.forEach"
+							}
+						},
+						{
+							"id": 183,
+							"name": "get",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 184,
+									"name": "get",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 185,
+											"name": "key",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "typeParameter",
+												"name": "K"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"id": 2,
+												"name": "RateLimit"
+											},
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 183,
+										"name": "Map.get"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/typescript/lib/lib.es2015.collection.d.ts",
+									"line": 25,
+									"character": 7
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 183,
+								"name": "Map.get"
+							}
+						},
+						{
+							"id": 186,
+							"name": "has",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 187,
+									"name": "has",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 188,
+											"name": "key",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "typeParameter",
+												"name": "K"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 186,
+										"name": "Map.has"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/typescript/lib/lib.es2015.collection.d.ts",
+									"line": 26,
+									"character": 7
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 186,
+								"name": "Map.has"
+							}
+						},
+						{
+							"id": 112,
+							"name": "map",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 113,
+									"name": "map",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Maps this Cache to an array (like Array#map())"
+									},
+									"typeParameter": [
+										{
+											"id": 114,
+											"name": "T",
+											"kind": 131072,
+											"kindString": "Type parameter",
+											"flags": {
+												"isExported": true
+											}
+										}
+									],
+									"parameters": [
+										{
+											"id": 115,
+											"name": "fn",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "Function to determine what is mapped to the new Array"
+											},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 116,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {
+														"isExported": true
+													},
+													"signatures": [
+														{
+															"id": 117,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {
+																"isExported": true
+															},
+															"parameters": [
+																{
+																	"id": 118,
+																	"name": "value",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "reference",
+																		"id": 2,
+																		"name": "RateLimit"
+																	}
+																},
+																{
+																	"id": 119,
+																	"name": "key",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "typeParameter",
+																		"name": "K"
+																	}
+																},
+																{
+																	"id": 120,
+																	"name": "map",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "this"
+																	}
+																}
+															],
+															"type": {
+																"type": "typeParameter",
+																"name": "T"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+															"line": 64,
+															"character": 20
+														}
+													]
+												}
+											}
+										},
+										{
+											"id": 121,
+											"name": "thisArg",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true,
+												"isOptional": true
+											},
+											"comment": {
+												"text": "Optional binding for the fn param\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "typeParameter",
+											"name": "T"
+										}
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 112,
+										"name": "Cache.map"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+									"line": 64,
+									"character": 7
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 112,
+								"name": "Cache.map"
+							}
+						},
+						{
+							"id": 140,
+							"name": "reduce",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 141,
+									"name": "reduce",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Reduces this cache into a singularity"
+									},
+									"typeParameter": [
+										{
+											"id": 142,
+											"name": "I",
+											"kind": 131072,
+											"kindString": "Type parameter",
+											"flags": {
+												"isExported": true
+											}
+										}
+									],
+									"parameters": [
+										{
+											"id": 143,
+											"name": "fn",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "The function to determine how this Cache is reduced"
+											},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 144,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {
+														"isExported": true
+													},
+													"signatures": [
+														{
+															"id": 145,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {
+																"isExported": true
+															},
+															"parameters": [
+																{
+																	"id": 146,
+																	"name": "accumulator",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "typeParameter",
+																		"name": "I"
+																	}
+																},
+																{
+																	"id": 147,
+																	"name": "value",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "reference",
+																		"id": 2,
+																		"name": "RateLimit"
+																	}
+																},
+																{
+																	"id": 148,
+																	"name": "key",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "typeParameter",
+																		"name": "K"
+																	}
+																},
+																{
+																	"id": 149,
+																	"name": "map",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "this"
+																	}
+																}
+															],
+															"type": {
+																"type": "typeParameter",
+																"name": "I"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+															"line": 83,
+															"character": 17
+														}
+													]
+												}
+											}
+										},
+										{
+											"id": 150,
+											"name": "initialValue",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "The initial value"
+											},
+											"type": {
+												"type": "typeParameter",
+												"name": "I"
+											}
+										},
+										{
+											"id": 151,
+											"name": "thisArg",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true,
+												"isOptional": true
+											},
+											"comment": {
+												"text": "Optional binding for the fn param\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "typeParameter",
+										"name": "I"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 140,
+										"name": "Cache.reduce"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+									"line": 83,
+									"character": 10
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 140,
+								"name": "Cache.reduce"
+							}
+						},
+						{
+							"id": 49,
+							"name": "set",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 50,
+									"name": "set",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Wraps Collection's set method to set interval to sweep inactive RateLimits"
+									},
+									"parameters": [
+										{
+											"id": 51,
+											"name": "id",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "The id the RateLimit belongs to"
+											},
+											"type": {
+												"type": "typeParameter",
+												"name": "K"
+											}
+										},
+										{
+											"id": 52,
+											"name": "ratelimit",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "The RateLimit to set\n"
+											},
+											"type": {
+												"type": "reference",
+												"id": 2,
+												"name": "RateLimit"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "this"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "Map.set"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/RateLimitManager.ts",
+									"line": 69,
+									"character": 11
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "Map.set"
+							}
+						},
+						{
+							"id": 122,
+							"name": "some",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 123,
+									"name": "some",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Tests if some entries in this cache meets a condition"
+									},
+									"parameters": [
+										{
+											"id": 124,
+											"name": "fn",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "The function to test the condition"
+											},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 125,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {
+														"isExported": true
+													},
+													"signatures": [
+														{
+															"id": 126,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {
+																"isExported": true
+															},
+															"parameters": [
+																{
+																	"id": 127,
+																	"name": "value",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "reference",
+																		"id": 2,
+																		"name": "RateLimit"
+																	}
+																},
+																{
+																	"id": 128,
+																	"name": "key",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "typeParameter",
+																		"name": "K"
+																	}
+																},
+																{
+																	"id": 129,
+																	"name": "map",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "this"
+																	}
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "boolean"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+															"line": 70,
+															"character": 12
+														}
+													]
+												}
+											}
+										},
+										{
+											"id": 130,
+											"name": "thisArg",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true,
+												"isOptional": true
+											},
+											"comment": {
+												"text": "Optional binding for the fn param\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 122,
+										"name": "Cache.some"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+									"line": 70,
+									"character": 8
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 122,
+								"name": "Cache.some"
+							}
+						},
+						{
+							"id": 160,
+							"name": "sort",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 161,
+									"name": "sort",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Sorts entries in this Cache"
+									},
+									"parameters": [
+										{
+											"id": 162,
+											"name": "compareFunction",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true,
+												"isOptional": true
+											},
+											"comment": {
+												"text": "Function to determine how this Cache should be sorted\n"
+											},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 163,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {
+														"isExported": true
+													},
+													"signatures": [
+														{
+															"id": 164,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {
+																"isExported": true
+															},
+															"parameters": [
+																{
+																	"id": 165,
+																	"name": "v0",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "reference",
+																		"id": 2,
+																		"name": "RateLimit"
+																	}
+																},
+																{
+																	"id": 166,
+																	"name": "v1",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "reference",
+																		"id": 2,
+																		"name": "RateLimit"
+																	}
+																},
+																{
+																	"id": 167,
+																	"name": "k0",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true,
+																		"isOptional": true
+																	},
+																	"type": {
+																		"type": "typeParameter",
+																		"name": "K"
+																	}
+																},
+																{
+																	"id": 168,
+																	"name": "k1",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true,
+																		"isOptional": true
+																	},
+																	"type": {
+																		"type": "typeParameter",
+																		"name": "K"
+																	}
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+															"line": 102,
+															"character": 26
+														}
+													]
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "this"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 160,
+										"name": "Cache.sort"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
+									"line": 102,
+									"character": 8
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 160,
+								"name": "Cache.sort"
+							}
+						},
+						{
+							"id": 53,
+							"name": "sweep",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 54,
+									"name": "sweep",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Wraps Collection's sweep method to clear the interval when this manager is empty"
+									},
+									"parameters": [
+										{
+											"id": 55,
+											"name": "fn",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "The filter function"
+											},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 56,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {
+														"isExported": true
+													},
+													"signatures": [
+														{
+															"id": 57,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {
+																"isExported": true
+															},
+															"parameters": [
+																{
+																	"id": 58,
+																	"name": "value",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "reference",
+																		"id": 2,
+																		"name": "RateLimit"
+																	}
+																},
+																{
+																	"id": 59,
+																	"name": "key",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "typeParameter",
+																		"name": "K"
+																	}
+																},
+																{
+																	"id": 60,
+																	"name": "collection",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "this"
+																	}
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "boolean"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "src/RateLimitManager.ts",
+															"line": 80,
+															"character": 17
+														}
+													]
+												}
+											},
+											"defaultValue": "(rl): boolean => rl.expired"
+										},
+										{
+											"id": 61,
+											"name": "thisArg",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true,
+												"isOptional": true
+											},
+											"comment": {
+												"text": "The this for the sweep\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "Cache.sweep"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/RateLimitManager.ts",
+									"line": 80,
+									"character": 13
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "Cache.sweep"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								31
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								28,
+								29,
+								189,
+								30
+							]
+						},
+						{
+							"title": "Accessors",
+							"kind": 262144,
+							"children": [
+								35,
+								39,
+								64,
+								68,
+								66,
+								70,
+								74,
+								72,
+								62
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								43,
+								169,
+								152,
+								154,
+								46,
+								171,
+								157,
+								131,
+								103,
+								76,
+								85,
+								94,
+								174,
+								183,
+								186,
+								112,
+								140,
+								49,
+								122,
+								160,
+								53
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/RateLimitManager.ts",
+							"line": 4,
+							"character": 29
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"typeArguments": [
+								{
+									"type": "typeParameter",
+									"name": "K"
+								},
+								{
+									"type": "reference",
+									"id": 2,
+									"name": "RateLimit"
+								}
+							],
+							"name": "Cache"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						26
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/RateLimitManager.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 190,
+			"name": "\"index\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/runner/work/ratelimits/ratelimits/src/index.ts",
+			"children": [
+				{
+					"id": 191,
+					"name": "RateLimit",
+					"kind": 16777216,
+					"kindString": "Reference",
+					"flags": {
+						"isExported": true
+					},
+					"target": 2
+				},
+				{
+					"id": 192,
+					"name": "RateLimitManager",
+					"kind": 16777216,
+					"kindString": "Reference",
+					"flags": {
+						"isExported": true
+					},
+					"target": 26
+				}
+			],
+			"groups": [
+				{
+					"title": "References",
+					"kind": 16777216,
+					"children": [
+						191,
+						192
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Modules",
+			"kind": 1,
+			"children": [
+				1,
+				25,
+				190
+			]
+		}
+	]
+}

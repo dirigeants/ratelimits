@@ -638,7 +638,7 @@
 							}
 						},
 						{
-							"id": 189,
+							"id": 198,
 							"name": "size",
 							"kind": 1024,
 							"kindString": "Property",
@@ -659,7 +659,7 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 189,
+								"id": 198,
 								"name": "Map.size"
 							}
 						},
@@ -900,8 +900,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-									"line": 8,
+									"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+									"line": 10,
 									"character": 13
 								}
 							],
@@ -956,8 +956,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-									"line": 16,
+									"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+									"line": 18,
 									"character": 16
 								}
 							],
@@ -1013,8 +1013,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-									"line": 12,
+									"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+									"line": 14,
 									"character": 18
 								}
 							],
@@ -1079,8 +1079,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-									"line": 20,
+									"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+									"line": 22,
 									"character": 12
 								}
 							],
@@ -1135,8 +1135,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-									"line": 28,
+									"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+									"line": 30,
 									"character": 15
 								}
 							],
@@ -1192,8 +1192,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-									"line": 24,
+									"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+									"line": 26,
 									"character": 17
 								}
 							],
@@ -1294,7 +1294,7 @@
 							]
 						},
 						{
-							"id": 169,
+							"id": 178,
 							"name": "clear",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1303,7 +1303,7 @@
 							},
 							"signatures": [
 								{
-									"id": 170,
+									"id": 179,
 									"name": "clear",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1316,7 +1316,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 169,
+										"id": 178,
 										"name": "Map.clear"
 									}
 								}
@@ -1330,7 +1330,7 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 169,
+								"id": 178,
 								"name": "Map.clear"
 							}
 						},
@@ -1378,8 +1378,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-									"line": 87,
+									"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+									"line": 89,
 									"character": 9
 								}
 							],
@@ -1466,8 +1466,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-									"line": 92,
+									"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+									"line": 94,
 									"character": 10
 								}
 							],
@@ -1532,7 +1532,7 @@
 							]
 						},
 						{
-							"id": 171,
+							"id": 180,
 							"name": "delete",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1541,7 +1541,7 @@
 							},
 							"signatures": [
 								{
-									"id": 172,
+									"id": 181,
 									"name": "delete",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1550,7 +1550,7 @@
 									},
 									"parameters": [
 										{
-											"id": 173,
+											"id": 182,
 											"name": "key",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1569,7 +1569,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 171,
+										"id": 180,
 										"name": "Map.delete"
 									}
 								}
@@ -1583,7 +1583,7 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 171,
+								"id": 180,
 								"name": "Map.delete"
 							}
 						},
@@ -1649,8 +1649,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-									"line": 97,
+									"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+									"line": 99,
 									"character": 10
 								}
 							],
@@ -1761,8 +1761,8 @@
 													],
 													"sources": [
 														{
-															"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-															"line": 76,
+															"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+															"line": 78,
 															"character": 13
 														}
 													]
@@ -1800,8 +1800,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-									"line": 76,
+									"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+									"line": 78,
 									"character": 9
 								}
 							],
@@ -1912,8 +1912,8 @@
 													],
 													"sources": [
 														{
-															"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-															"line": 58,
+															"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+															"line": 60,
 															"character": 14
 														}
 													]
@@ -1962,8 +1962,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-									"line": 58,
+									"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+									"line": 60,
 									"character": 10
 								}
 							],
@@ -2074,8 +2074,8 @@
 													],
 													"sources": [
 														{
-															"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-															"line": 34,
+															"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+															"line": 36,
 															"character": 12
 														}
 													]
@@ -2132,8 +2132,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-									"line": 34,
+									"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+									"line": 36,
 									"character": 8
 								}
 							],
@@ -2244,8 +2244,8 @@
 													],
 													"sources": [
 														{
-															"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-															"line": 40,
+															"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+															"line": 42,
 															"character": 15
 														}
 													]
@@ -2292,8 +2292,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-									"line": 40,
+									"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+									"line": 42,
 									"character": 11
 								}
 							],
@@ -2404,8 +2404,8 @@
 													],
 													"sources": [
 														{
-															"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-															"line": 46,
+															"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+															"line": 48,
 															"character": 17
 														}
 													]
@@ -2453,8 +2453,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-									"line": 46,
+									"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+									"line": 48,
 									"character": 13
 								}
 							],
@@ -2465,7 +2465,7 @@
 							}
 						},
 						{
-							"id": 174,
+							"id": 183,
 							"name": "forEach",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2474,7 +2474,7 @@
 							},
 							"signatures": [
 								{
-									"id": 175,
+									"id": 184,
 									"name": "forEach",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2483,7 +2483,7 @@
 									},
 									"parameters": [
 										{
-											"id": 176,
+											"id": 185,
 											"name": "callbackfn",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2493,7 +2493,7 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 177,
+													"id": 186,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -2502,7 +2502,7 @@
 													},
 													"signatures": [
 														{
-															"id": 178,
+															"id": 187,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -2511,7 +2511,7 @@
 															},
 															"parameters": [
 																{
-																	"id": 179,
+																	"id": 188,
 																	"name": "value",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2525,7 +2525,7 @@
 																	}
 																},
 																{
-																	"id": 180,
+																	"id": 189,
 																	"name": "key",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2538,7 +2538,7 @@
 																	}
 																},
 																{
-																	"id": 181,
+																	"id": 190,
 																	"name": "map",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2579,7 +2579,7 @@
 											}
 										},
 										{
-											"id": 182,
+											"id": 191,
 											"name": "thisArg",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2599,7 +2599,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 174,
+										"id": 183,
 										"name": "Map.forEach"
 									}
 								}
@@ -2613,12 +2613,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 174,
+								"id": 183,
 								"name": "Map.forEach"
 							}
 						},
 						{
-							"id": 183,
+							"id": 192,
 							"name": "get",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2627,7 +2627,7 @@
 							},
 							"signatures": [
 								{
-									"id": 184,
+									"id": 193,
 									"name": "get",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2636,7 +2636,7 @@
 									},
 									"parameters": [
 										{
-											"id": 185,
+											"id": 194,
 											"name": "key",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2665,7 +2665,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 183,
+										"id": 192,
 										"name": "Map.get"
 									}
 								}
@@ -2679,12 +2679,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 183,
+								"id": 192,
 								"name": "Map.get"
 							}
 						},
 						{
-							"id": 186,
+							"id": 195,
 							"name": "has",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2693,7 +2693,7 @@
 							},
 							"signatures": [
 								{
-									"id": 187,
+									"id": 196,
 									"name": "has",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2702,7 +2702,7 @@
 									},
 									"parameters": [
 										{
-											"id": 188,
+											"id": 197,
 											"name": "key",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2721,7 +2721,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 186,
+										"id": 195,
 										"name": "Map.has"
 									}
 								}
@@ -2735,7 +2735,7 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 186,
+								"id": 195,
 								"name": "Map.has"
 							}
 						},
@@ -2851,8 +2851,8 @@
 													],
 													"sources": [
 														{
-															"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-															"line": 64,
+															"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+															"line": 66,
 															"character": 20
 														}
 													]
@@ -2893,8 +2893,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-									"line": 64,
+									"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+									"line": 66,
 									"character": 7
 								}
 							],
@@ -3029,8 +3029,8 @@
 													],
 													"sources": [
 														{
-															"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-															"line": 83,
+															"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+															"line": 85,
 															"character": 17
 														}
 													]
@@ -3084,8 +3084,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-									"line": 83,
+									"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+									"line": 85,
 									"character": 10
 								}
 							],
@@ -3274,8 +3274,8 @@
 													],
 													"sources": [
 														{
-															"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-															"line": 70,
+															"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+															"line": 72,
 															"character": 12
 														}
 													]
@@ -3313,8 +3313,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-									"line": 70,
+									"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+									"line": 72,
 									"character": 8
 								}
 							],
@@ -3342,7 +3342,7 @@
 										"isExported": true
 									},
 									"comment": {
-										"shortText": "Sorts entries in this Cache"
+										"shortText": "Sorts entries in-place in this Cache"
 									},
 									"parameters": [
 										{
@@ -3442,8 +3442,8 @@
 													],
 													"sources": [
 														{
-															"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-															"line": 102,
+															"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+															"line": 104,
 															"character": 26
 														}
 													]
@@ -3464,8 +3464,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "node_modules/@klasa/cache/dist/index.d.ts",
-									"line": 102,
+									"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+									"line": 104,
 									"character": 8
 								}
 							],
@@ -3473,6 +3473,168 @@
 								"type": "reference",
 								"id": 160,
 								"name": "Cache.sort"
+							}
+						},
+						{
+							"id": 169,
+							"name": "sorted",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 170,
+									"name": "sorted",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Sorts entries in a new Cache"
+									},
+									"parameters": [
+										{
+											"id": 171,
+											"name": "compareFunction",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true,
+												"isOptional": true
+											},
+											"comment": {
+												"text": "Function to determine how the resulting Cache should be sorted\n"
+											},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 172,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {
+														"isExported": true
+													},
+													"signatures": [
+														{
+															"id": 173,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {
+																"isExported": true
+															},
+															"parameters": [
+																{
+																	"id": 174,
+																	"name": "v0",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "reference",
+																		"id": 2,
+																		"name": "RateLimit"
+																	}
+																},
+																{
+																	"id": 175,
+																	"name": "v1",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "reference",
+																		"id": 2,
+																		"name": "RateLimit"
+																	}
+																},
+																{
+																	"id": 176,
+																	"name": "k0",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true,
+																		"isOptional": true
+																	},
+																	"type": {
+																		"type": "typeParameter",
+																		"name": "K"
+																	}
+																},
+																{
+																	"id": 177,
+																	"name": "k1",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true,
+																		"isOptional": true
+																	},
+																	"type": {
+																		"type": "typeParameter",
+																		"name": "K"
+																	}
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+															"line": 109,
+															"character": 28
+														}
+													]
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "K"
+											},
+											{
+												"type": "reference",
+												"id": 2,
+												"name": "RateLimit"
+											}
+										],
+										"name": "Cache"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 169,
+										"name": "Cache.sorted"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
+									"line": 109,
+									"character": 10
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 169,
+								"name": "Cache.sorted"
 							}
 						},
 						{
@@ -3641,7 +3803,7 @@
 							"children": [
 								28,
 								29,
-								189,
+								198,
 								30
 							]
 						},
@@ -3665,25 +3827,26 @@
 							"kind": 2048,
 							"children": [
 								43,
-								169,
+								178,
 								152,
 								154,
 								46,
-								171,
+								180,
 								157,
 								131,
 								103,
 								76,
 								85,
 								94,
-								174,
 								183,
-								186,
+								192,
+								195,
 								112,
 								140,
 								49,
 								122,
 								160,
+								169,
 								53
 							]
 						}
@@ -3732,7 +3895,7 @@
 			]
 		},
 		{
-			"id": 190,
+			"id": 199,
 			"name": "\"index\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -3742,7 +3905,7 @@
 			"originalName": "/home/runner/work/ratelimits/ratelimits/src/index.ts",
 			"children": [
 				{
-					"id": 191,
+					"id": 200,
 					"name": "RateLimit",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -3752,7 +3915,7 @@
 					"target": 2
 				},
 				{
-					"id": 192,
+					"id": 201,
 					"name": "RateLimitManager",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -3767,8 +3930,8 @@
 					"title": "References",
 					"kind": 16777216,
 					"children": [
-						191,
-						192
+						200,
+						201
 					]
 				}
 			],
@@ -3788,7 +3951,7 @@
 			"children": [
 				1,
 				25,
-				190
+				199
 			]
 		}
 	]

@@ -53,6 +53,6 @@
     ]
   },
   "dependencies": {
-    "@klasa/cache": "^0.0.1"
+    "@klasa/cache": "^0.0.2"
   }
 }

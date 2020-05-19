@@ -2119,7 +2119,7 @@
 											},
 											{
 												"type": "intrinsic",
-												"name": "void"
+												"name": "undefined"
 											}
 										]
 									},
@@ -2279,7 +2279,7 @@
 											},
 											{
 												"type": "intrinsic",
-												"name": "void"
+												"name": "undefined"
 											}
 										]
 									},
@@ -2440,7 +2440,7 @@
 											},
 											{
 												"type": "intrinsic",
-												"name": "void"
+												"name": "undefined"
 											}
 										]
 									},

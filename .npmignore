@@ -21,3 +21,4 @@ azure-pipelines.yml
 test-results.xml
 .nycrc.json
 .typedoc.json
+dist/test/

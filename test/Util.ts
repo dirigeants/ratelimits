@@ -1,5 +1,5 @@
 import ava from 'ava';
-import { RateLimitManager } from '../dist';
+import { RateLimitManager } from '../src';
 import { sleep } from '@klasa/utils';
 import { Cache } from '@klasa/cache';
 

@@ -51,5 +51,8 @@
         "test/": "dist/test/"
       }
     }
+  },
+  "dependencies": {
+    "@klasa/cache": "^0.0.3"
   }
 }

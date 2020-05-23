@@ -164,11 +164,6 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@klasa/cache@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@klasa/cache/-/cache-0.0.3.tgz#824595f247fbd6204a6278eae988d22eb783d00b"
-  integrity sha512-8+V14gY0soYSd9j5NKel+gKpoEccwFnKYPEL2XALx+SOHzVMAmmfVBqO4cd3QzPdIW3770jklLY2SeXeEv9xvA==
-
 "@klasa/utils@^0.0.5":
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/@klasa/utils/-/utils-0.0.5.tgz#42891d2412f3e428e8e53af1227daedf78324b1a"

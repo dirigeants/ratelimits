@@ -13,6 +13,13 @@ ava('Acquiring', (test): void => {
 	test.is(ratelimit2, manager.get('two'));
 });
 
+ava('limited', (test): void => {
+	const manager = new RateLimitManager(30000, 2);
+
+	const ratelimit = manager.acquire('one');
+	test.false(ratelimit.limited);
+});
+
 ava('Set guard', (test): void => {
 	const manager = new RateLimitManager(30000, 2);
 

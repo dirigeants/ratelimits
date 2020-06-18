@@ -5,14 +5,14 @@ import { RateLimit } from './RateLimit';
 export class RateLimitManager<K = string> extends Cache<K, RateLimit<K>> {
 
 	/**
-	 * The amount of times a RateLimit can drip before it's limited.
-	 */
-	public limit: number;
-
-	/**
 	 * The amount of milliseconds for the ratelimits from this manager to expire.
 	 */
 	public time: number;
+
+	/**
+	 * The amount of times a RateLimit can drip before it's limited.
+	 */
+	public limit: number;
 
 	/**
 	 * The interval to sweep expired ratelimits.
@@ -26,8 +26,8 @@ export class RateLimitManager<K = string> extends Cache<K, RateLimit<K>> {
 	public constructor(time: number, limit = 1) {
 		super();
 
-		this.limit = limit;
 		this.time = time;
+		this.limit = limit;
 	}
 
 	/**

@@ -663,7 +663,7 @@
 							}
 						},
 						{
-							"id": 21,
+							"id": 22,
 							"name": "limit",
 							"kind": 1024,
 							"kindString": "Property",
@@ -677,7 +677,7 @@
 							"sources": [
 								{
 									"fileName": "src/RateLimitManager.ts",
-									"line": 10,
+									"line": 15,
 									"character": 13
 								}
 							],
@@ -713,7 +713,7 @@
 							}
 						},
 						{
-							"id": 22,
+							"id": 21,
 							"name": "time",
 							"kind": 1024,
 							"kindString": "Property",
@@ -727,7 +727,7 @@
 							"sources": [
 								{
 									"fileName": "src/RateLimitManager.ts",
-									"line": 15,
+									"line": 10,
 									"character": 12
 								}
 							],
@@ -3887,9 +3887,9 @@
 							"kind": 1024,
 							"children": [
 								23,
-								21,
+								22,
 								183,
-								22
+								21
 							]
 						},
 						{

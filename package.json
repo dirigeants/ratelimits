@@ -1,6 +1,6 @@
 {
   "name": "@klasa/ratelimits",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Handles cooldowns and slowmodes for klasa.",
   "main": "dist/src/index.js",
   "scripts": {

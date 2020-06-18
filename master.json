@@ -6,7 +6,7 @@
 	"originalName": "",
 	"children": [
 		{
-			"id": 1,
+			"id": 184,
 			"name": "\"src/RateLimit\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -16,16 +16,27 @@
 			"originalName": "/home/runner/work/ratelimits/ratelimits/src/RateLimit.ts",
 			"children": [
 				{
-					"id": 2,
+					"id": 185,
 					"name": "RateLimit",
 					"kind": 128,
 					"kindString": "Class",
 					"flags": {
 						"isExported": true
 					},
+					"typeParameter": [
+						{
+							"id": 186,
+							"name": "K",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
 					"children": [
 						{
-							"id": 7,
+							"id": 190,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -36,7 +47,7 @@
 							"comment": {},
 							"signatures": [
 								{
-									"id": 8,
+									"id": 191,
 									"name": "new RateLimit",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -46,41 +57,32 @@
 									"comment": {},
 									"parameters": [
 										{
-											"id": 9,
-											"name": "bucket",
+											"id": 192,
+											"name": "manager",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {
 												"isExported": true
 											},
 											"comment": {
-												"shortText": "The number of requests before this is limited"
+												"shortText": "The manager for this RateLimit\n"
 											},
 											"type": {
-												"type": "intrinsic",
-												"name": "number"
-											}
-										},
-										{
-											"id": 10,
-											"name": "cooldown",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {
-												"isExported": true
-											},
-											"comment": {
-												"shortText": "The amount of milliseconds for this ratelimit to expire\n"
-											},
-											"type": {
-												"type": "intrinsic",
-												"name": "number"
+												"type": "reference",
+												"id": 19,
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "K"
+													}
+												],
+												"name": "RateLimitManager"
 											}
 										}
 									],
 									"type": {
 										"type": "reference",
-										"id": 2,
+										"id": 185,
 										"name": "RateLimit"
 									}
 								}
@@ -88,25 +90,28 @@
 							"sources": [
 								{
 									"fileName": "src/RateLimit.ts",
-									"line": 6,
-									"character": 22
+									"line": 20,
+									"character": 19
 								}
 							]
 						},
 						{
-							"id": 3,
-							"name": "bucket",
+							"id": 189,
+							"name": "#expires",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isPublic": true,
+								"isPrivate": true,
 								"isExported": true
+							},
+							"comment": {
+								"shortText": "When this RateLimit is reset back to a full state"
 							},
 							"sources": [
 								{
 									"fileName": "src/RateLimit.ts",
-									"line": 3,
-									"character": 14
+									"line": 20,
+									"character": 9
 								}
 							],
 							"type": {
@@ -115,70 +120,62 @@
 							}
 						},
 						{
-							"id": 4,
-							"name": "cooldown",
+							"id": 188,
+							"name": "#remaining",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isPublic": true,
+								"isPrivate": true,
 								"isExported": true
+							},
+							"comment": {
+								"shortText": "The remaining times this RateLimit can be dripped before the RateLimit bucket is empty"
 							},
 							"sources": [
 								{
 									"fileName": "src/RateLimit.ts",
-									"line": 4,
+									"line": 15,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 187,
+							"name": "manager",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The RateLimitManager this Ratelimit is for"
+							},
+							"sources": [
+								{
+									"fileName": "src/RateLimit.ts",
+									"line": 10,
 									"character": 16
 								}
 							],
 							"type": {
-								"type": "intrinsic",
-								"name": "number"
+								"type": "reference",
+								"id": 19,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "K"
+									}
+								],
+								"name": "RateLimitManager"
 							}
 						},
 						{
-							"id": 5,
-							"name": "remaining",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isPrivate": true,
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "src/RateLimit.ts",
-									"line": 5,
-									"character": 18
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "number"
-							}
-						},
-						{
-							"id": 6,
-							"name": "time",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isPrivate": true,
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "src/RateLimit.ts",
-									"line": 6,
-									"character": 13
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "number"
-							}
-						},
-						{
-							"id": 11,
+							"id": 193,
 							"name": "expired",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -191,7 +188,7 @@
 							},
 							"getSignature": [
 								{
-									"id": 12,
+									"id": 194,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -210,13 +207,13 @@
 							"sources": [
 								{
 									"fileName": "src/RateLimit.ts",
-									"line": 29,
+									"line": 33,
 									"character": 19
 								}
 							]
 						},
 						{
-							"id": 13,
+							"id": 195,
 							"name": "limited",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -229,7 +226,7 @@
 							},
 							"getSignature": [
 								{
-									"id": 14,
+									"id": 196,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -248,13 +245,13 @@
 							"sources": [
 								{
 									"fileName": "src/RateLimit.ts",
-									"line": 36,
+									"line": 40,
 									"character": 19
 								}
 							]
 						},
 						{
-							"id": 15,
+							"id": 197,
 							"name": "remainingTime",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -267,7 +264,7 @@
 							},
 							"getSignature": [
 								{
-									"id": 16,
+									"id": 198,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -286,13 +283,13 @@
 							"sources": [
 								{
 									"fileName": "src/RateLimit.ts",
-									"line": 43,
+									"line": 47,
 									"character": 25
 								}
 							]
 						},
 						{
-							"id": 17,
+							"id": 199,
 							"name": "drip",
 							"kind": 2048,
 							"kindString": "Method",
@@ -302,7 +299,7 @@
 							},
 							"signatures": [
 								{
-									"id": 18,
+									"id": 200,
 									"name": "drip",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -321,13 +318,13 @@
 							"sources": [
 								{
 									"fileName": "src/RateLimit.ts",
-									"line": 50,
+									"line": 54,
 									"character": 12
 								}
 							]
 						},
 						{
-							"id": 19,
+							"id": 203,
 							"name": "reset",
 							"kind": 2048,
 							"kindString": "Method",
@@ -337,7 +334,7 @@
 							},
 							"signatures": [
 								{
-									"id": 20,
+									"id": 204,
 									"name": "reset",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -356,13 +353,13 @@
 							"sources": [
 								{
 									"fileName": "src/RateLimit.ts",
-									"line": 61,
+									"line": 75,
 									"character": 13
 								}
 							]
 						},
 						{
-							"id": 21,
+							"id": 205,
 							"name": "resetRemaining",
 							"kind": 2048,
 							"kindString": "Method",
@@ -372,7 +369,7 @@
 							},
 							"signatures": [
 								{
-									"id": 22,
+									"id": 206,
 									"name": "resetRemaining",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -391,13 +388,13 @@
 							"sources": [
 								{
 									"fileName": "src/RateLimit.ts",
-									"line": 68,
+									"line": 82,
 									"character": 22
 								}
 							]
 						},
 						{
-							"id": 23,
+							"id": 207,
 							"name": "resetTime",
 							"kind": 2048,
 							"kindString": "Method",
@@ -407,7 +404,7 @@
 							},
 							"signatures": [
 								{
-									"id": 24,
+									"id": 208,
 									"name": "resetTime",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -426,8 +423,44 @@
 							"sources": [
 								{
 									"fileName": "src/RateLimit.ts",
-									"line": 80,
+									"line": 90,
 									"character": 17
+								}
+							]
+						},
+						{
+							"id": 201,
+							"name": "take",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 202,
+									"name": "take",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Takes a token that can be returned to the bucket if something goes wrong before this resets."
+									},
+									"type": {
+										"type": "reference",
+										"id": 2,
+										"name": "RateLimitToken"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/RateLimit.ts",
+									"line": 65,
+									"character": 12
 								}
 							]
 						}
@@ -437,43 +470,43 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								7
+								190
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								3,
-								4,
-								5,
-								6
+								189,
+								188,
+								187
 							]
 						},
 						{
 							"title": "Accessors",
 							"kind": 262144,
 							"children": [
-								11,
-								13,
-								15
+								193,
+								195,
+								197
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								17,
-								19,
-								21,
-								23
+								199,
+								203,
+								205,
+								207,
+								201
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "src/RateLimit.ts",
-							"line": 1,
+							"line": 5,
 							"character": 22
 						}
 					]
@@ -484,7 +517,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						2
+						185
 					]
 				}
 			],
@@ -497,7 +530,7 @@
 			]
 		},
 		{
-			"id": 25,
+			"id": 18,
 			"name": "\"src/RateLimitManager\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -507,7 +540,7 @@
 			"originalName": "/home/runner/work/ratelimits/ratelimits/src/RateLimitManager.ts",
 			"children": [
 				{
-					"id": 26,
+					"id": 19,
 					"name": "RateLimitManager",
 					"kind": 128,
 					"kindString": "Class",
@@ -516,7 +549,7 @@
 					},
 					"typeParameter": [
 						{
-							"id": 27,
+							"id": 20,
 							"name": "K",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -527,7 +560,7 @@
 					],
 					"children": [
 						{
-							"id": 31,
+							"id": 24,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -538,7 +571,7 @@
 							"comment": {},
 							"signatures": [
 								{
-									"id": 32,
+									"id": 25,
 									"name": "new RateLimitManager",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -548,15 +581,15 @@
 									"comment": {},
 									"parameters": [
 										{
-											"id": 33,
-											"name": "bucket",
+											"id": 26,
+											"name": "time",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {
 												"isExported": true
 											},
 											"comment": {
-												"shortText": "The amount of times a RateLimit can drip before it's limited"
+												"shortText": "The amount of milliseconds for the ratelimits from this manager to expire.\n"
 											},
 											"type": {
 												"type": "intrinsic",
@@ -564,25 +597,26 @@
 											}
 										},
 										{
-											"id": 34,
-											"name": "cooldown",
+											"id": 27,
+											"name": "limit",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {
 												"isExported": true
 											},
 											"comment": {
-												"shortText": "The amount of milliseconds for the ratelimits from this manager to expire\n"
+												"shortText": "The amount of times a RateLimit can drip before it's limited."
 											},
 											"type": {
 												"type": "intrinsic",
 												"name": "number"
-											}
+											},
+											"defaultValue": "1"
 										}
 									],
 									"type": {
 										"type": "reference",
-										"id": 26,
+										"id": 19,
 										"name": "RateLimitManager"
 									}
 								}
@@ -590,25 +624,61 @@
 							"sources": [
 								{
 									"fileName": "src/RateLimitManager.ts",
-									"line": 8,
-									"character": 45
+									"line": 20,
+									"character": 38
 								}
 							]
 						},
 						{
-							"id": 28,
-							"name": "_bucket",
+							"id": 23,
+							"name": "#sweepInterval",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
 								"isPrivate": true,
 								"isExported": true
 							},
+							"comment": {
+								"shortText": "The interval to sweep expired ratelimits."
+							},
 							"sources": [
 								{
 									"fileName": "src/RateLimitManager.ts",
-									"line": 6,
-									"character": 16
+									"line": 20,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"name": "Timer"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									}
+								]
+							}
+						},
+						{
+							"id": 21,
+							"name": "limit",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The amount of times a RateLimit can drip before it's limited."
+							},
+							"sources": [
+								{
+									"fileName": "src/RateLimitManager.ts",
+									"line": 10,
+									"character": 13
 								}
 							],
 							"type": {
@@ -617,28 +687,7 @@
 							}
 						},
 						{
-							"id": 29,
-							"name": "_cooldown",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isPrivate": true,
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "src/RateLimitManager.ts",
-									"line": 7,
-									"character": 18
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "number"
-							}
-						},
-						{
-							"id": 198,
+							"id": 183,
 							"name": "size",
 							"kind": 1024,
 							"kindString": "Property",
@@ -659,194 +708,36 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 198,
+								"id": 183,
 								"name": "Map.size"
 							}
 						},
 						{
-							"id": 30,
-							"name": "sweepInterval",
+							"id": 22,
+							"name": "time",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isPrivate": true,
+								"isPublic": true,
 								"isExported": true
+							},
+							"comment": {
+								"shortText": "The amount of milliseconds for the ratelimits from this manager to expire."
 							},
 							"sources": [
 								{
 									"fileName": "src/RateLimitManager.ts",
-									"line": 8,
-									"character": 22
+									"line": 15,
+									"character": 12
 								}
 							],
 							"type": {
-								"type": "union",
-								"types": [
-									{
-										"type": "reference",
-										"name": "Timer"
-									},
-									{
-										"type": "intrinsic",
-										"name": "null"
-									}
-								]
+								"type": "intrinsic",
+								"name": "number"
 							}
 						},
 						{
-							"id": 35,
-							"name": "bucket",
-							"kind": 262144,
-							"kindString": "Accessor",
-							"flags": {
-								"isPublic": true,
-								"isExported": true
-							},
-							"comment": {
-								"shortText": "The amount of times a RateLimit from this manager can drip before it's limited"
-							},
-							"getSignature": [
-								{
-									"id": 36,
-									"name": "__get",
-									"kind": 524288,
-									"kindString": "Get signature",
-									"flags": {
-										"isExported": true
-									},
-									"comment": {
-										"shortText": "The amount of times a RateLimit from this manager can drip before it's limited"
-									},
-									"type": {
-										"type": "intrinsic",
-										"name": "number"
-									}
-								}
-							],
-							"setSignature": [
-								{
-									"id": 37,
-									"name": "__set",
-									"kind": 1048576,
-									"kindString": "Set signature",
-									"flags": {
-										"isExported": true
-									},
-									"comment": {
-										"shortText": "The amount of times a RateLimit from this manager can drip before it's limited"
-									},
-									"parameters": [
-										{
-											"id": 38,
-											"name": "value",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {
-												"isExported": true
-											},
-											"type": {
-												"type": "intrinsic",
-												"name": "number"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "src/RateLimitManager.ts",
-									"line": 25,
-									"character": 18
-								},
-								{
-									"fileName": "src/RateLimitManager.ts",
-									"line": 29,
-									"character": 18
-								}
-							]
-						},
-						{
-							"id": 39,
-							"name": "cooldown",
-							"kind": 262144,
-							"kindString": "Accessor",
-							"flags": {
-								"isPublic": true,
-								"isExported": true
-							},
-							"comment": {
-								"shortText": "The amount of milliseconds for the ratelimits from this manager to expire"
-							},
-							"getSignature": [
-								{
-									"id": 40,
-									"name": "__get",
-									"kind": 524288,
-									"kindString": "Get signature",
-									"flags": {
-										"isExported": true
-									},
-									"comment": {
-										"shortText": "The amount of milliseconds for the ratelimits from this manager to expire"
-									},
-									"type": {
-										"type": "intrinsic",
-										"name": "number"
-									}
-								}
-							],
-							"setSignature": [
-								{
-									"id": 41,
-									"name": "__set",
-									"kind": 1048576,
-									"kindString": "Set signature",
-									"flags": {
-										"isExported": true
-									},
-									"comment": {
-										"shortText": "The amount of milliseconds for the ratelimits from this manager to expire"
-									},
-									"parameters": [
-										{
-											"id": 42,
-											"name": "value",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {
-												"isExported": true
-											},
-											"type": {
-												"type": "intrinsic",
-												"name": "number"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "src/RateLimitManager.ts",
-									"line": 37,
-									"character": 20
-								},
-								{
-									"fileName": "src/RateLimitManager.ts",
-									"line": 41,
-									"character": 20
-								}
-							]
-						},
-						{
-							"id": 64,
+							"id": 49,
 							"name": "first",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -858,7 +749,7 @@
 							},
 							"getSignature": [
 								{
-									"id": 65,
+									"id": 50,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -880,7 +771,13 @@
 													},
 													{
 														"type": "reference",
-														"id": 2,
+														"id": 185,
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "K"
+															}
+														],
 														"name": "RateLimit"
 													}
 												]
@@ -893,7 +790,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 64,
+										"id": 49,
 										"name": "Cache.first"
 									}
 								}
@@ -907,12 +804,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 64,
+								"id": 49,
 								"name": "Cache.first"
 							}
 						},
 						{
-							"id": 68,
+							"id": 53,
 							"name": "firstKey",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -924,7 +821,7 @@
 							},
 							"getSignature": [
 								{
-									"id": 69,
+									"id": 54,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -949,7 +846,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 68,
+										"id": 53,
 										"name": "Cache.firstKey"
 									}
 								}
@@ -963,12 +860,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 68,
+								"id": 53,
 								"name": "Cache.firstKey"
 							}
 						},
 						{
-							"id": 66,
+							"id": 51,
 							"name": "firstValue",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -980,7 +877,7 @@
 							},
 							"getSignature": [
 								{
-									"id": 67,
+									"id": 52,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -995,7 +892,13 @@
 										"types": [
 											{
 												"type": "reference",
-												"id": 2,
+												"id": 185,
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "K"
+													}
+												],
 												"name": "RateLimit"
 											},
 											{
@@ -1006,7 +909,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 66,
+										"id": 51,
 										"name": "Cache.firstValue"
 									}
 								}
@@ -1020,12 +923,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 66,
+								"id": 51,
 								"name": "Cache.firstValue"
 							}
 						},
 						{
-							"id": 70,
+							"id": 55,
 							"name": "last",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -1037,7 +940,7 @@
 							},
 							"getSignature": [
 								{
-									"id": 71,
+									"id": 56,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -1059,7 +962,13 @@
 													},
 													{
 														"type": "reference",
-														"id": 2,
+														"id": 185,
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "K"
+															}
+														],
 														"name": "RateLimit"
 													}
 												]
@@ -1072,7 +981,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 70,
+										"id": 55,
 										"name": "Cache.last"
 									}
 								}
@@ -1086,12 +995,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 70,
+								"id": 55,
 								"name": "Cache.last"
 							}
 						},
 						{
-							"id": 74,
+							"id": 59,
 							"name": "lastKey",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -1103,7 +1012,7 @@
 							},
 							"getSignature": [
 								{
-									"id": 75,
+									"id": 60,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -1128,7 +1037,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 74,
+										"id": 59,
 										"name": "Cache.lastKey"
 									}
 								}
@@ -1142,12 +1051,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 74,
+								"id": 59,
 								"name": "Cache.lastKey"
 							}
 						},
 						{
-							"id": 72,
+							"id": 57,
 							"name": "lastValue",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -1159,7 +1068,7 @@
 							},
 							"getSignature": [
 								{
-									"id": 73,
+									"id": 58,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -1174,7 +1083,13 @@
 										"types": [
 											{
 												"type": "reference",
-												"id": 2,
+												"id": 185,
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "K"
+													}
+												],
 												"name": "RateLimit"
 											},
 											{
@@ -1185,7 +1100,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 72,
+										"id": 57,
 										"name": "Cache.lastValue"
 									}
 								}
@@ -1199,12 +1114,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 72,
+								"id": 57,
 								"name": "Cache.lastValue"
 							}
 						},
 						{
-							"id": 62,
+							"id": 47,
 							"name": "[Symbol.species]",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -1215,7 +1130,7 @@
 							},
 							"getSignature": [
 								{
-									"id": 63,
+									"id": 48,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -1234,13 +1149,13 @@
 							"sources": [
 								{
 									"fileName": "src/RateLimitManager.ts",
-									"line": 91,
+									"line": 78,
 									"character": 35
 								}
 							]
 						},
 						{
-							"id": 43,
+							"id": 28,
 							"name": "acquire",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1250,7 +1165,7 @@
 							},
 							"signatures": [
 								{
-									"id": 44,
+									"id": 29,
 									"name": "acquire",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1258,11 +1173,11 @@
 										"isExported": true
 									},
 									"comment": {
-										"shortText": "Gets a RateLimit from this manager or creates it if it does not exist"
+										"shortText": "Gets a RateLimit from this manager or creates it if it does not exist."
 									},
 									"parameters": [
 										{
-											"id": 45,
+											"id": 30,
 											"name": "id",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1280,7 +1195,13 @@
 									],
 									"type": {
 										"type": "reference",
-										"id": 2,
+										"id": 185,
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "K"
+											}
+										],
 										"name": "RateLimit"
 									}
 								}
@@ -1288,13 +1209,13 @@
 							"sources": [
 								{
 									"fileName": "src/RateLimitManager.ts",
-									"line": 50,
+									"line": 37,
 									"character": 15
 								}
 							]
 						},
 						{
-							"id": 178,
+							"id": 163,
 							"name": "clear",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1303,7 +1224,7 @@
 							},
 							"signatures": [
 								{
-									"id": 179,
+									"id": 164,
 									"name": "clear",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1316,7 +1237,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 178,
+										"id": 163,
 										"name": "Map.clear"
 									}
 								}
@@ -1330,12 +1251,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 178,
+								"id": 163,
 								"name": "Map.clear"
 							}
 						},
 						{
-							"id": 152,
+							"id": 137,
 							"name": "clone",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1344,7 +1265,7 @@
 							},
 							"signatures": [
 								{
-									"id": 153,
+									"id": 138,
 									"name": "clone",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1363,7 +1284,13 @@
 											},
 											{
 												"type": "reference",
-												"id": 2,
+												"id": 185,
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "K"
+													}
+												],
 												"name": "RateLimit"
 											}
 										],
@@ -1371,7 +1298,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 152,
+										"id": 137,
 										"name": "Cache.clone"
 									}
 								}
@@ -1385,12 +1312,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 152,
+								"id": 137,
 								"name": "Cache.clone"
 							}
 						},
 						{
-							"id": 154,
+							"id": 139,
 							"name": "concat",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1399,7 +1326,7 @@
 							},
 							"signatures": [
 								{
-									"id": 155,
+									"id": 140,
 									"name": "concat",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1411,7 +1338,7 @@
 									},
 									"parameters": [
 										{
-											"id": 156,
+											"id": 141,
 											"name": "caches",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1433,7 +1360,13 @@
 														},
 														{
 															"type": "reference",
-															"id": 2,
+															"id": 185,
+															"typeArguments": [
+																{
+																	"type": "typeParameter",
+																	"name": "K"
+																}
+															],
 															"name": "RateLimit"
 														}
 													],
@@ -1451,7 +1384,13 @@
 											},
 											{
 												"type": "reference",
-												"id": 2,
+												"id": 185,
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "K"
+													}
+												],
 												"name": "RateLimit"
 											}
 										],
@@ -1459,7 +1398,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 154,
+										"id": 139,
 										"name": "Cache.concat"
 									}
 								}
@@ -1473,12 +1412,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 154,
+								"id": 139,
 								"name": "Cache.concat"
 							}
 						},
 						{
-							"id": 46,
+							"id": 31,
 							"name": "create",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1488,7 +1427,7 @@
 							},
 							"signatures": [
 								{
-									"id": 47,
+									"id": 32,
 									"name": "create",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1496,11 +1435,11 @@
 										"isExported": true
 									},
 									"comment": {
-										"shortText": "Creates a RateLimit for this manager"
+										"shortText": "Creates a RateLimit for this manager."
 									},
 									"parameters": [
 										{
-											"id": 48,
+											"id": 33,
 											"name": "id",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1518,7 +1457,13 @@
 									],
 									"type": {
 										"type": "reference",
-										"id": 2,
+										"id": 185,
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "K"
+											}
+										],
 										"name": "RateLimit"
 									}
 								}
@@ -1526,13 +1471,13 @@
 							"sources": [
 								{
 									"fileName": "src/RateLimitManager.ts",
-									"line": 58,
+									"line": 45,
 									"character": 14
 								}
 							]
 						},
 						{
-							"id": 180,
+							"id": 165,
 							"name": "delete",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1541,7 +1486,7 @@
 							},
 							"signatures": [
 								{
-									"id": 181,
+									"id": 166,
 									"name": "delete",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1550,7 +1495,7 @@
 									},
 									"parameters": [
 										{
-											"id": 182,
+											"id": 167,
 											"name": "key",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1569,7 +1514,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 180,
+										"id": 165,
 										"name": "Map.delete"
 									}
 								}
@@ -1583,12 +1528,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 180,
+								"id": 165,
 								"name": "Map.delete"
 							}
 						},
 						{
-							"id": 157,
+							"id": 142,
 							"name": "equals",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1597,7 +1542,7 @@
 							},
 							"signatures": [
 								{
-									"id": 158,
+									"id": 143,
 									"name": "equals",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1609,7 +1554,7 @@
 									},
 									"parameters": [
 										{
-											"id": 159,
+											"id": 144,
 											"name": "cache",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1628,7 +1573,13 @@
 													},
 													{
 														"type": "reference",
-														"id": 2,
+														"id": 185,
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "K"
+															}
+														],
 														"name": "RateLimit"
 													}
 												],
@@ -1642,7 +1593,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 157,
+										"id": 142,
 										"name": "Cache.equals"
 									}
 								}
@@ -1656,12 +1607,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 157,
+								"id": 142,
 								"name": "Cache.equals"
 							}
 						},
 						{
-							"id": 131,
+							"id": 116,
 							"name": "every",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1670,7 +1621,7 @@
 							},
 							"signatures": [
 								{
-									"id": 132,
+									"id": 117,
 									"name": "every",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1682,7 +1633,7 @@
 									},
 									"parameters": [
 										{
-											"id": 133,
+											"id": 118,
 											"name": "fn",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1695,7 +1646,7 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 134,
+													"id": 119,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -1704,7 +1655,7 @@
 													},
 													"signatures": [
 														{
-															"id": 135,
+															"id": 120,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -1713,7 +1664,7 @@
 															},
 															"parameters": [
 																{
-																	"id": 136,
+																	"id": 121,
 																	"name": "value",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -1722,12 +1673,18 @@
 																	},
 																	"type": {
 																		"type": "reference",
-																		"id": 2,
+																		"id": 185,
+																		"typeArguments": [
+																			{
+																				"type": "typeParameter",
+																				"name": "K"
+																			}
+																		],
 																		"name": "RateLimit"
 																	}
 																},
 																{
-																	"id": 137,
+																	"id": 122,
 																	"name": "key",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -1740,7 +1697,7 @@
 																	}
 																},
 																{
-																	"id": 138,
+																	"id": 123,
 																	"name": "map",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -1770,7 +1727,7 @@
 											}
 										},
 										{
-											"id": 139,
+											"id": 124,
 											"name": "thisArg",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1793,7 +1750,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 131,
+										"id": 116,
 										"name": "Cache.every"
 									}
 								}
@@ -1807,12 +1764,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 131,
+								"id": 116,
 								"name": "Cache.every"
 							}
 						},
 						{
-							"id": 103,
+							"id": 88,
 							"name": "filter",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1821,7 +1778,7 @@
 							},
 							"signatures": [
 								{
-									"id": 104,
+									"id": 89,
 									"name": "filter",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1833,7 +1790,7 @@
 									},
 									"parameters": [
 										{
-											"id": 105,
+											"id": 90,
 											"name": "fn",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1846,7 +1803,7 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 106,
+													"id": 91,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -1855,7 +1812,7 @@
 													},
 													"signatures": [
 														{
-															"id": 107,
+															"id": 92,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -1864,7 +1821,7 @@
 															},
 															"parameters": [
 																{
-																	"id": 108,
+																	"id": 93,
 																	"name": "value",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -1873,12 +1830,18 @@
 																	},
 																	"type": {
 																		"type": "reference",
-																		"id": 2,
+																		"id": 185,
+																		"typeArguments": [
+																			{
+																				"type": "typeParameter",
+																				"name": "K"
+																			}
+																		],
 																		"name": "RateLimit"
 																	}
 																},
 																{
-																	"id": 109,
+																	"id": 94,
 																	"name": "key",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -1891,7 +1854,7 @@
 																	}
 																},
 																{
-																	"id": 110,
+																	"id": 95,
 																	"name": "map",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -1921,7 +1884,7 @@
 											}
 										},
 										{
-											"id": 111,
+											"id": 96,
 											"name": "thisArg",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1947,7 +1910,13 @@
 											},
 											{
 												"type": "reference",
-												"id": 2,
+												"id": 185,
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "K"
+													}
+												],
 												"name": "RateLimit"
 											}
 										],
@@ -1955,7 +1924,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 103,
+										"id": 88,
 										"name": "Cache.filter"
 									}
 								}
@@ -1969,12 +1938,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 103,
+								"id": 88,
 								"name": "Cache.filter"
 							}
 						},
 						{
-							"id": 76,
+							"id": 61,
 							"name": "find",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1983,7 +1952,7 @@
 							},
 							"signatures": [
 								{
-									"id": 77,
+									"id": 62,
 									"name": "find",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1995,7 +1964,7 @@
 									},
 									"parameters": [
 										{
-											"id": 78,
+											"id": 63,
 											"name": "fn",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2008,7 +1977,7 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 79,
+													"id": 64,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -2017,7 +1986,7 @@
 													},
 													"signatures": [
 														{
-															"id": 80,
+															"id": 65,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -2026,7 +1995,7 @@
 															},
 															"parameters": [
 																{
-																	"id": 81,
+																	"id": 66,
 																	"name": "value",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2035,12 +2004,18 @@
 																	},
 																	"type": {
 																		"type": "reference",
-																		"id": 2,
+																		"id": 185,
+																		"typeArguments": [
+																			{
+																				"type": "typeParameter",
+																				"name": "K"
+																			}
+																		],
 																		"name": "RateLimit"
 																	}
 																},
 																{
-																	"id": 82,
+																	"id": 67,
 																	"name": "key",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2053,7 +2028,7 @@
 																	}
 																},
 																{
-																	"id": 83,
+																	"id": 68,
 																	"name": "map",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2083,7 +2058,7 @@
 											}
 										},
 										{
-											"id": 84,
+											"id": 69,
 											"name": "thisArg",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2112,7 +2087,13 @@
 													},
 													{
 														"type": "reference",
-														"id": 2,
+														"id": 185,
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "K"
+															}
+														],
 														"name": "RateLimit"
 													}
 												]
@@ -2125,7 +2106,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 76,
+										"id": 61,
 										"name": "Cache.find"
 									}
 								}
@@ -2139,12 +2120,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 76,
+								"id": 61,
 								"name": "Cache.find"
 							}
 						},
 						{
-							"id": 85,
+							"id": 70,
 							"name": "findKey",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2153,7 +2134,7 @@
 							},
 							"signatures": [
 								{
-									"id": 86,
+									"id": 71,
 									"name": "findKey",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2165,7 +2146,7 @@
 									},
 									"parameters": [
 										{
-											"id": 87,
+											"id": 72,
 											"name": "fn",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2178,7 +2159,7 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 88,
+													"id": 73,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -2187,7 +2168,7 @@
 													},
 													"signatures": [
 														{
-															"id": 89,
+															"id": 74,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -2196,7 +2177,7 @@
 															},
 															"parameters": [
 																{
-																	"id": 90,
+																	"id": 75,
 																	"name": "value",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2205,12 +2186,18 @@
 																	},
 																	"type": {
 																		"type": "reference",
-																		"id": 2,
+																		"id": 185,
+																		"typeArguments": [
+																			{
+																				"type": "typeParameter",
+																				"name": "K"
+																			}
+																		],
 																		"name": "RateLimit"
 																	}
 																},
 																{
-																	"id": 91,
+																	"id": 76,
 																	"name": "key",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2223,7 +2210,7 @@
 																	}
 																},
 																{
-																	"id": 92,
+																	"id": 77,
 																	"name": "map",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2253,7 +2240,7 @@
 											}
 										},
 										{
-											"id": 93,
+											"id": 78,
 											"name": "thisArg",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2285,7 +2272,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 85,
+										"id": 70,
 										"name": "Cache.findKey"
 									}
 								}
@@ -2299,12 +2286,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 85,
+								"id": 70,
 								"name": "Cache.findKey"
 							}
 						},
 						{
-							"id": 94,
+							"id": 79,
 							"name": "findValue",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2313,7 +2300,7 @@
 							},
 							"signatures": [
 								{
-									"id": 95,
+									"id": 80,
 									"name": "findValue",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2325,7 +2312,7 @@
 									},
 									"parameters": [
 										{
-											"id": 96,
+											"id": 81,
 											"name": "fn",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2338,7 +2325,7 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 97,
+													"id": 82,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -2347,7 +2334,7 @@
 													},
 													"signatures": [
 														{
-															"id": 98,
+															"id": 83,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -2356,7 +2343,7 @@
 															},
 															"parameters": [
 																{
-																	"id": 99,
+																	"id": 84,
 																	"name": "value",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2365,12 +2352,18 @@
 																	},
 																	"type": {
 																		"type": "reference",
-																		"id": 2,
+																		"id": 185,
+																		"typeArguments": [
+																			{
+																				"type": "typeParameter",
+																				"name": "K"
+																			}
+																		],
 																		"name": "RateLimit"
 																	}
 																},
 																{
-																	"id": 100,
+																	"id": 85,
 																	"name": "key",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2383,7 +2376,7 @@
 																	}
 																},
 																{
-																	"id": 101,
+																	"id": 86,
 																	"name": "map",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2413,7 +2406,7 @@
 											}
 										},
 										{
-											"id": 102,
+											"id": 87,
 											"name": "thisArg",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2435,7 +2428,13 @@
 										"types": [
 											{
 												"type": "reference",
-												"id": 2,
+												"id": 185,
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "K"
+													}
+												],
 												"name": "RateLimit"
 											},
 											{
@@ -2446,7 +2445,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 94,
+										"id": 79,
 										"name": "Cache.findValue"
 									}
 								}
@@ -2460,12 +2459,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 94,
+								"id": 79,
 								"name": "Cache.findValue"
 							}
 						},
 						{
-							"id": 183,
+							"id": 168,
 							"name": "forEach",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2474,7 +2473,7 @@
 							},
 							"signatures": [
 								{
-									"id": 184,
+									"id": 169,
 									"name": "forEach",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2483,7 +2482,7 @@
 									},
 									"parameters": [
 										{
-											"id": 185,
+											"id": 170,
 											"name": "callbackfn",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2493,7 +2492,7 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 186,
+													"id": 171,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -2502,7 +2501,7 @@
 													},
 													"signatures": [
 														{
-															"id": 187,
+															"id": 172,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -2511,7 +2510,7 @@
 															},
 															"parameters": [
 																{
-																	"id": 188,
+																	"id": 173,
 																	"name": "value",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2520,12 +2519,18 @@
 																	},
 																	"type": {
 																		"type": "reference",
-																		"id": 2,
+																		"id": 185,
+																		"typeArguments": [
+																			{
+																				"type": "typeParameter",
+																				"name": "K"
+																			}
+																		],
 																		"name": "RateLimit"
 																	}
 																},
 																{
-																	"id": 189,
+																	"id": 174,
 																	"name": "key",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2538,7 +2543,7 @@
 																	}
 																},
 																{
-																	"id": 190,
+																	"id": 175,
 																	"name": "map",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2554,7 +2559,13 @@
 																			},
 																			{
 																				"type": "reference",
-																				"id": 2,
+																				"id": 185,
+																				"typeArguments": [
+																					{
+																						"type": "typeParameter",
+																						"name": "K"
+																					}
+																				],
 																				"name": "RateLimit"
 																			}
 																		],
@@ -2579,7 +2590,7 @@
 											}
 										},
 										{
-											"id": 191,
+											"id": 176,
 											"name": "thisArg",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2599,7 +2610,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 183,
+										"id": 168,
 										"name": "Map.forEach"
 									}
 								}
@@ -2613,12 +2624,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 183,
+								"id": 168,
 								"name": "Map.forEach"
 							}
 						},
 						{
-							"id": 192,
+							"id": 177,
 							"name": "get",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2627,7 +2638,7 @@
 							},
 							"signatures": [
 								{
-									"id": 193,
+									"id": 178,
 									"name": "get",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2636,7 +2647,7 @@
 									},
 									"parameters": [
 										{
-											"id": 194,
+											"id": 179,
 											"name": "key",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2654,7 +2665,13 @@
 										"types": [
 											{
 												"type": "reference",
-												"id": 2,
+												"id": 185,
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "K"
+													}
+												],
 												"name": "RateLimit"
 											},
 											{
@@ -2665,7 +2682,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 192,
+										"id": 177,
 										"name": "Map.get"
 									}
 								}
@@ -2679,12 +2696,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 192,
+								"id": 177,
 								"name": "Map.get"
 							}
 						},
 						{
-							"id": 195,
+							"id": 180,
 							"name": "has",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2693,7 +2710,7 @@
 							},
 							"signatures": [
 								{
-									"id": 196,
+									"id": 181,
 									"name": "has",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2702,7 +2719,7 @@
 									},
 									"parameters": [
 										{
-											"id": 197,
+											"id": 182,
 											"name": "key",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2721,7 +2738,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 195,
+										"id": 180,
 										"name": "Map.has"
 									}
 								}
@@ -2735,12 +2752,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 195,
+								"id": 180,
 								"name": "Map.has"
 							}
 						},
 						{
-							"id": 112,
+							"id": 97,
 							"name": "map",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2749,7 +2766,7 @@
 							},
 							"signatures": [
 								{
-									"id": 113,
+									"id": 98,
 									"name": "map",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2761,7 +2778,7 @@
 									},
 									"typeParameter": [
 										{
-											"id": 114,
+											"id": 99,
 											"name": "T",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -2772,7 +2789,7 @@
 									],
 									"parameters": [
 										{
-											"id": 115,
+											"id": 100,
 											"name": "fn",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2785,7 +2802,7 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 116,
+													"id": 101,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -2794,7 +2811,7 @@
 													},
 													"signatures": [
 														{
-															"id": 117,
+															"id": 102,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -2803,7 +2820,7 @@
 															},
 															"parameters": [
 																{
-																	"id": 118,
+																	"id": 103,
 																	"name": "value",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2812,12 +2829,18 @@
 																	},
 																	"type": {
 																		"type": "reference",
-																		"id": 2,
+																		"id": 185,
+																		"typeArguments": [
+																			{
+																				"type": "typeParameter",
+																				"name": "K"
+																			}
+																		],
 																		"name": "RateLimit"
 																	}
 																},
 																{
-																	"id": 119,
+																	"id": 104,
 																	"name": "key",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2830,7 +2853,7 @@
 																	}
 																},
 																{
-																	"id": 120,
+																	"id": 105,
 																	"name": "map",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2860,7 +2883,7 @@
 											}
 										},
 										{
-											"id": 121,
+											"id": 106,
 											"name": "thisArg",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2886,7 +2909,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 112,
+										"id": 97,
 										"name": "Cache.map"
 									}
 								}
@@ -2900,12 +2923,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 112,
+								"id": 97,
 								"name": "Cache.map"
 							}
 						},
 						{
-							"id": 140,
+							"id": 125,
 							"name": "reduce",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2914,7 +2937,7 @@
 							},
 							"signatures": [
 								{
-									"id": 141,
+									"id": 126,
 									"name": "reduce",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2926,7 +2949,7 @@
 									},
 									"typeParameter": [
 										{
-											"id": 142,
+											"id": 127,
 											"name": "I",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -2937,7 +2960,7 @@
 									],
 									"parameters": [
 										{
-											"id": 143,
+											"id": 128,
 											"name": "fn",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2950,7 +2973,7 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 144,
+													"id": 129,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -2959,7 +2982,7 @@
 													},
 													"signatures": [
 														{
-															"id": 145,
+															"id": 130,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -2968,7 +2991,7 @@
 															},
 															"parameters": [
 																{
-																	"id": 146,
+																	"id": 131,
 																	"name": "accumulator",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2981,7 +3004,7 @@
 																	}
 																},
 																{
-																	"id": 147,
+																	"id": 132,
 																	"name": "value",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2990,12 +3013,18 @@
 																	},
 																	"type": {
 																		"type": "reference",
-																		"id": 2,
+																		"id": 185,
+																		"typeArguments": [
+																			{
+																				"type": "typeParameter",
+																				"name": "K"
+																			}
+																		],
 																		"name": "RateLimit"
 																	}
 																},
 																{
-																	"id": 148,
+																	"id": 133,
 																	"name": "key",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -3008,7 +3037,7 @@
 																	}
 																},
 																{
-																	"id": 149,
+																	"id": 134,
 																	"name": "map",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -3038,7 +3067,7 @@
 											}
 										},
 										{
-											"id": 150,
+											"id": 135,
 											"name": "initialValue",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3054,7 +3083,7 @@
 											}
 										},
 										{
-											"id": 151,
+											"id": 136,
 											"name": "thisArg",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3077,7 +3106,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 140,
+										"id": 125,
 										"name": "Cache.reduce"
 									}
 								}
@@ -3091,12 +3120,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 140,
+								"id": 125,
 								"name": "Cache.reduce"
 							}
 						},
 						{
-							"id": 49,
+							"id": 34,
 							"name": "set",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3106,7 +3135,7 @@
 							},
 							"signatures": [
 								{
-									"id": 50,
+									"id": 35,
 									"name": "set",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3114,11 +3143,11 @@
 										"isExported": true
 									},
 									"comment": {
-										"shortText": "Wraps Collection's set method to set interval to sweep inactive RateLimits"
+										"shortText": "Wraps Collection's set method to set interval to sweep inactive RateLimits."
 									},
 									"parameters": [
 										{
-											"id": 51,
+											"id": 36,
 											"name": "id",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3134,7 +3163,7 @@
 											}
 										},
 										{
-											"id": 52,
+											"id": 37,
 											"name": "ratelimit",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3146,7 +3175,13 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2,
+												"id": 185,
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "K"
+													}
+												],
 												"name": "RateLimit"
 											}
 										}
@@ -3164,7 +3199,7 @@
 							"sources": [
 								{
 									"fileName": "src/RateLimitManager.ts",
-									"line": 69,
+									"line": 56,
 									"character": 11
 								}
 							],
@@ -3174,7 +3209,7 @@
 							}
 						},
 						{
-							"id": 122,
+							"id": 107,
 							"name": "some",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3183,7 +3218,7 @@
 							},
 							"signatures": [
 								{
-									"id": 123,
+									"id": 108,
 									"name": "some",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3195,7 +3230,7 @@
 									},
 									"parameters": [
 										{
-											"id": 124,
+											"id": 109,
 											"name": "fn",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3208,7 +3243,7 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 125,
+													"id": 110,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -3217,7 +3252,7 @@
 													},
 													"signatures": [
 														{
-															"id": 126,
+															"id": 111,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -3226,7 +3261,7 @@
 															},
 															"parameters": [
 																{
-																	"id": 127,
+																	"id": 112,
 																	"name": "value",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -3235,12 +3270,18 @@
 																	},
 																	"type": {
 																		"type": "reference",
-																		"id": 2,
+																		"id": 185,
+																		"typeArguments": [
+																			{
+																				"type": "typeParameter",
+																				"name": "K"
+																			}
+																		],
 																		"name": "RateLimit"
 																	}
 																},
 																{
-																	"id": 128,
+																	"id": 113,
 																	"name": "key",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -3253,7 +3294,7 @@
 																	}
 																},
 																{
-																	"id": 129,
+																	"id": 114,
 																	"name": "map",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -3283,7 +3324,7 @@
 											}
 										},
 										{
-											"id": 130,
+											"id": 115,
 											"name": "thisArg",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3306,7 +3347,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 122,
+										"id": 107,
 										"name": "Cache.some"
 									}
 								}
@@ -3320,12 +3361,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 122,
+								"id": 107,
 								"name": "Cache.some"
 							}
 						},
 						{
-							"id": 160,
+							"id": 145,
 							"name": "sort",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3334,7 +3375,7 @@
 							},
 							"signatures": [
 								{
-									"id": 161,
+									"id": 146,
 									"name": "sort",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3346,7 +3387,7 @@
 									},
 									"parameters": [
 										{
-											"id": 162,
+											"id": 147,
 											"name": "compareFunction",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3358,96 +3399,112 @@
 												"text": "Function to determine how this Cache should be sorted\n"
 											},
 											"type": {
-												"type": "reflection",
-												"declaration": {
-													"id": 163,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {
-														"isExported": true
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "undefined"
 													},
-													"signatures": [
-														{
-															"id": 164,
-															"name": "__call",
-															"kind": 4096,
-															"kindString": "Call signature",
+													{
+														"type": "reflection",
+														"declaration": {
+															"id": 148,
+															"name": "__type",
+															"kind": 65536,
+															"kindString": "Type literal",
 															"flags": {
 																"isExported": true
 															},
-															"parameters": [
+															"signatures": [
 																{
-																	"id": 165,
-																	"name": "v0",
-																	"kind": 32768,
-																	"kindString": "Parameter",
+																	"id": 149,
+																	"name": "__call",
+																	"kind": 4096,
+																	"kindString": "Call signature",
 																	"flags": {
 																		"isExported": true
 																	},
+																	"parameters": [
+																		{
+																			"id": 150,
+																			"name": "v0",
+																			"kind": 32768,
+																			"kindString": "Parameter",
+																			"flags": {
+																				"isExported": true
+																			},
+																			"type": {
+																				"type": "reference",
+																				"id": 185,
+																				"typeArguments": [
+																					{
+																						"type": "typeParameter",
+																						"name": "K"
+																					}
+																				],
+																				"name": "RateLimit"
+																			}
+																		},
+																		{
+																			"id": 151,
+																			"name": "v1",
+																			"kind": 32768,
+																			"kindString": "Parameter",
+																			"flags": {
+																				"isExported": true
+																			},
+																			"type": {
+																				"type": "reference",
+																				"id": 185,
+																				"typeArguments": [
+																					{
+																						"type": "typeParameter",
+																						"name": "K"
+																					}
+																				],
+																				"name": "RateLimit"
+																			}
+																		},
+																		{
+																			"id": 152,
+																			"name": "k0",
+																			"kind": 32768,
+																			"kindString": "Parameter",
+																			"flags": {
+																				"isExported": true,
+																				"isOptional": true
+																			},
+																			"type": {
+																				"type": "reference",
+																				"id": 20,
+																				"name": "K"
+																			}
+																		},
+																		{
+																			"id": 153,
+																			"name": "k1",
+																			"kind": 32768,
+																			"kindString": "Parameter",
+																			"flags": {
+																				"isExported": true,
+																				"isOptional": true
+																			},
+																			"type": {
+																				"type": "reference",
+																				"id": 20,
+																				"name": "K"
+																			}
+																		}
+																	],
 																	"type": {
-																		"type": "reference",
-																		"id": 2,
-																		"name": "RateLimit"
-																	}
-																},
-																{
-																	"id": 166,
-																	"name": "v1",
-																	"kind": 32768,
-																	"kindString": "Parameter",
-																	"flags": {
-																		"isExported": true
-																	},
-																	"type": {
-																		"type": "reference",
-																		"id": 2,
-																		"name": "RateLimit"
-																	}
-																},
-																{
-																	"id": 167,
-																	"name": "k0",
-																	"kind": 32768,
-																	"kindString": "Parameter",
-																	"flags": {
-																		"isExported": true,
-																		"isOptional": true
-																	},
-																	"type": {
-																		"type": "typeParameter",
-																		"name": "K"
-																	}
-																},
-																{
-																	"id": 168,
-																	"name": "k1",
-																	"kind": 32768,
-																	"kindString": "Parameter",
-																	"flags": {
-																		"isExported": true,
-																		"isOptional": true
-																	},
-																	"type": {
-																		"type": "typeParameter",
-																		"name": "K"
+																		"type": "intrinsic",
+																		"name": "number"
 																	}
 																}
-															],
-															"type": {
-																"type": "intrinsic",
-																"name": "number"
-															}
+															]
 														}
-													],
-													"sources": [
-														{
-															"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
-															"line": 104,
-															"character": 26
-														}
-													]
-												}
+													}
+												]
 											}
 										}
 									],
@@ -3457,7 +3514,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 160,
+										"id": 145,
 										"name": "Cache.sort"
 									}
 								}
@@ -3471,12 +3528,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 160,
+								"id": 145,
 								"name": "Cache.sort"
 							}
 						},
 						{
-							"id": 169,
+							"id": 154,
 							"name": "sorted",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3485,7 +3542,7 @@
 							},
 							"signatures": [
 								{
-									"id": 170,
+									"id": 155,
 									"name": "sorted",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3497,7 +3554,7 @@
 									},
 									"parameters": [
 										{
-											"id": 171,
+											"id": 156,
 											"name": "compareFunction",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3509,96 +3566,112 @@
 												"text": "Function to determine how the resulting Cache should be sorted\n"
 											},
 											"type": {
-												"type": "reflection",
-												"declaration": {
-													"id": 172,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {
-														"isExported": true
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "undefined"
 													},
-													"signatures": [
-														{
-															"id": 173,
-															"name": "__call",
-															"kind": 4096,
-															"kindString": "Call signature",
+													{
+														"type": "reflection",
+														"declaration": {
+															"id": 157,
+															"name": "__type",
+															"kind": 65536,
+															"kindString": "Type literal",
 															"flags": {
 																"isExported": true
 															},
-															"parameters": [
+															"signatures": [
 																{
-																	"id": 174,
-																	"name": "v0",
-																	"kind": 32768,
-																	"kindString": "Parameter",
+																	"id": 158,
+																	"name": "__call",
+																	"kind": 4096,
+																	"kindString": "Call signature",
 																	"flags": {
 																		"isExported": true
 																	},
+																	"parameters": [
+																		{
+																			"id": 159,
+																			"name": "v0",
+																			"kind": 32768,
+																			"kindString": "Parameter",
+																			"flags": {
+																				"isExported": true
+																			},
+																			"type": {
+																				"type": "reference",
+																				"id": 185,
+																				"typeArguments": [
+																					{
+																						"type": "typeParameter",
+																						"name": "K"
+																					}
+																				],
+																				"name": "RateLimit"
+																			}
+																		},
+																		{
+																			"id": 160,
+																			"name": "v1",
+																			"kind": 32768,
+																			"kindString": "Parameter",
+																			"flags": {
+																				"isExported": true
+																			},
+																			"type": {
+																				"type": "reference",
+																				"id": 185,
+																				"typeArguments": [
+																					{
+																						"type": "typeParameter",
+																						"name": "K"
+																					}
+																				],
+																				"name": "RateLimit"
+																			}
+																		},
+																		{
+																			"id": 161,
+																			"name": "k0",
+																			"kind": 32768,
+																			"kindString": "Parameter",
+																			"flags": {
+																				"isExported": true,
+																				"isOptional": true
+																			},
+																			"type": {
+																				"type": "reference",
+																				"id": 20,
+																				"name": "K"
+																			}
+																		},
+																		{
+																			"id": 162,
+																			"name": "k1",
+																			"kind": 32768,
+																			"kindString": "Parameter",
+																			"flags": {
+																				"isExported": true,
+																				"isOptional": true
+																			},
+																			"type": {
+																				"type": "reference",
+																				"id": 20,
+																				"name": "K"
+																			}
+																		}
+																	],
 																	"type": {
-																		"type": "reference",
-																		"id": 2,
-																		"name": "RateLimit"
-																	}
-																},
-																{
-																	"id": 175,
-																	"name": "v1",
-																	"kind": 32768,
-																	"kindString": "Parameter",
-																	"flags": {
-																		"isExported": true
-																	},
-																	"type": {
-																		"type": "reference",
-																		"id": 2,
-																		"name": "RateLimit"
-																	}
-																},
-																{
-																	"id": 176,
-																	"name": "k0",
-																	"kind": 32768,
-																	"kindString": "Parameter",
-																	"flags": {
-																		"isExported": true,
-																		"isOptional": true
-																	},
-																	"type": {
-																		"type": "typeParameter",
-																		"name": "K"
-																	}
-																},
-																{
-																	"id": 177,
-																	"name": "k1",
-																	"kind": 32768,
-																	"kindString": "Parameter",
-																	"flags": {
-																		"isExported": true,
-																		"isOptional": true
-																	},
-																	"type": {
-																		"type": "typeParameter",
-																		"name": "K"
+																		"type": "intrinsic",
+																		"name": "number"
 																	}
 																}
-															],
-															"type": {
-																"type": "intrinsic",
-																"name": "number"
-															}
+															]
 														}
-													],
-													"sources": [
-														{
-															"fileName": "node_modules/@klasa/cache/dist/Cache.d.ts",
-															"line": 109,
-															"character": 28
-														}
-													]
-												}
+													}
+												]
 											}
 										}
 									],
@@ -3611,7 +3684,13 @@
 											},
 											{
 												"type": "reference",
-												"id": 2,
+												"id": 185,
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "K"
+													}
+												],
 												"name": "RateLimit"
 											}
 										],
@@ -3619,7 +3698,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 169,
+										"id": 154,
 										"name": "Cache.sorted"
 									}
 								}
@@ -3633,12 +3712,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 169,
+								"id": 154,
 								"name": "Cache.sorted"
 							}
 						},
 						{
-							"id": 53,
+							"id": 38,
 							"name": "sweep",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3648,7 +3727,7 @@
 							},
 							"signatures": [
 								{
-									"id": 54,
+									"id": 39,
 									"name": "sweep",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3656,11 +3735,11 @@
 										"isExported": true
 									},
 									"comment": {
-										"shortText": "Wraps Collection's sweep method to clear the interval when this manager is empty"
+										"shortText": "Wraps Collection's sweep method to clear the interval when this manager is empty."
 									},
 									"parameters": [
 										{
-											"id": 55,
+											"id": 40,
 											"name": "fn",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3673,7 +3752,7 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 56,
+													"id": 41,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -3682,7 +3761,7 @@
 													},
 													"signatures": [
 														{
-															"id": 57,
+															"id": 42,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -3691,7 +3770,7 @@
 															},
 															"parameters": [
 																{
-																	"id": 58,
+																	"id": 43,
 																	"name": "value",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -3700,12 +3779,18 @@
 																	},
 																	"type": {
 																		"type": "reference",
-																		"id": 2,
+																		"id": 185,
+																		"typeArguments": [
+																			{
+																				"type": "typeParameter",
+																				"name": "K"
+																			}
+																		],
 																		"name": "RateLimit"
 																	}
 																},
 																{
-																	"id": 59,
+																	"id": 44,
 																	"name": "key",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -3718,7 +3803,7 @@
 																	}
 																},
 																{
-																	"id": 60,
+																	"id": 45,
 																	"name": "collection",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -3740,7 +3825,7 @@
 													"sources": [
 														{
 															"fileName": "src/RateLimitManager.ts",
-															"line": 80,
+															"line": 67,
 															"character": 17
 														}
 													]
@@ -3749,7 +3834,7 @@
 											"defaultValue": "(rl): boolean => rl.expired"
 										},
 										{
-											"id": 61,
+											"id": 46,
 											"name": "thisArg",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3779,7 +3864,7 @@
 							"sources": [
 								{
 									"fileName": "src/RateLimitManager.ts",
-									"line": 80,
+									"line": 67,
 									"character": 13
 								}
 							],
@@ -3794,67 +3879,65 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								31
+								24
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								28,
-								29,
-								198,
-								30
+								23,
+								21,
+								183,
+								22
 							]
 						},
 						{
 							"title": "Accessors",
 							"kind": 262144,
 							"children": [
-								35,
-								39,
-								64,
-								68,
-								66,
-								70,
-								74,
-								72,
-								62
+								49,
+								53,
+								51,
+								55,
+								59,
+								57,
+								47
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								43,
-								178,
-								152,
-								154,
-								46,
+								28,
+								163,
+								137,
+								139,
+								31,
+								165,
+								142,
+								116,
+								88,
+								61,
+								70,
+								79,
+								168,
+								177,
 								180,
-								157,
-								131,
-								103,
-								76,
-								85,
-								94,
-								183,
-								192,
-								195,
-								112,
-								140,
-								49,
-								122,
-								160,
-								169,
-								53
+								97,
+								125,
+								34,
+								107,
+								145,
+								154,
+								38
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "src/RateLimitManager.ts",
-							"line": 4,
+							"line": 5,
 							"character": 29
 						}
 					],
@@ -3868,7 +3951,13 @@
 								},
 								{
 									"type": "reference",
-									"id": 2,
+									"id": 185,
+									"typeArguments": [
+										{
+											"type": "typeParameter",
+											"name": "K"
+										}
+									],
 									"name": "RateLimit"
 								}
 							],
@@ -3882,7 +3971,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						26
+						19
 					]
 				}
 			],
@@ -3895,7 +3984,354 @@
 			]
 		},
 		{
-			"id": 199,
+			"id": 1,
+			"name": "\"src/RateLimitToken\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/runner/work/ratelimits/ratelimits/src/RateLimitToken.ts",
+			"children": [
+				{
+					"id": 2,
+					"name": "RateLimitToken",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Class that handles ratelimits for long running actions that may error."
+					},
+					"children": [
+						{
+							"id": 8,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"comment": {},
+							"signatures": [
+								{
+									"id": 9,
+									"name": "new RateLimitToken",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {},
+									"parameters": [
+										{
+											"id": 10,
+											"name": "expires",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"shortText": "When this token expires."
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 11,
+											"name": "reject",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"shortText": "The reject handler that restores the remaining to the RateLimit this is for.\n"
+											},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 12,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {
+														"isExported": true
+													},
+													"signatures": [
+														{
+															"id": 13,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "src/RateLimitToken.ts",
+															"line": 25,
+															"character": 44
+														}
+													]
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 2,
+										"name": "RateLimitToken"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/RateLimitToken.ts",
+									"line": 19,
+									"character": 15
+								}
+							]
+						},
+						{
+							"id": 3,
+							"name": "#expires",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "When this token expires."
+							},
+							"sources": [
+								{
+									"fileName": "src/RateLimitToken.ts",
+									"line": 9,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 4,
+							"name": "#reject",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The reject handler that restores the remaining to the RateLimit this is for."
+							},
+							"sources": [
+								{
+									"fileName": "src/RateLimitToken.ts",
+									"line": 14,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 5,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 6,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "void"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "src/RateLimitToken.ts",
+											"line": 14,
+											"character": 9
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 7,
+							"name": "#used",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "If this token has been used."
+							},
+							"sources": [
+								{
+									"fileName": "src/RateLimitToken.ts",
+									"line": 19,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"defaultValue": "false"
+						},
+						{
+							"id": 16,
+							"name": "reject",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 17,
+									"name": "reject",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Marks this token as used and returns the token to the ratelimit (for use when the underlying task fails)."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "this"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/RateLimitToken.ts",
+									"line": 42,
+									"character": 14
+								}
+							]
+						},
+						{
+							"id": 14,
+							"name": "resolve",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 15,
+									"name": "resolve",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Marks this token as used (for use when the underlying task completes successfully)."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "this"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/RateLimitToken.ts",
+									"line": 33,
+									"character": 15
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								8
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								3,
+								4,
+								7
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								16,
+								14
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/RateLimitToken.ts",
+							"line": 4,
+							"character": 27
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						2
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/RateLimitToken.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 209,
 			"name": "\"src/index\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -3905,24 +4341,34 @@
 			"originalName": "/home/runner/work/ratelimits/ratelimits/src/index.ts",
 			"children": [
 				{
-					"id": 200,
+					"id": 210,
 					"name": "RateLimit",
 					"kind": 16777216,
 					"kindString": "Reference",
 					"flags": {
 						"isExported": true
 					},
-					"target": 2
+					"target": 185
 				},
 				{
-					"id": 201,
+					"id": 211,
 					"name": "RateLimitManager",
 					"kind": 16777216,
 					"kindString": "Reference",
 					"flags": {
 						"isExported": true
 					},
-					"target": 26
+					"target": 19
+				},
+				{
+					"id": 212,
+					"name": "RateLimitToken",
+					"kind": 16777216,
+					"kindString": "Reference",
+					"flags": {
+						"isExported": true
+					},
+					"target": 2
 				}
 			],
 			"groups": [
@@ -3930,8 +4376,9 @@
 					"title": "References",
 					"kind": 16777216,
 					"children": [
-						200,
-						201
+						210,
+						211,
+						212
 					]
 				}
 			],
@@ -3944,7 +4391,7 @@
 			]
 		},
 		{
-			"id": 202,
+			"id": 213,
 			"name": "\"test/Util\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -3966,10 +4413,11 @@
 			"title": "Modules",
 			"kind": 1,
 			"children": [
+				184,
+				18,
 				1,
-				25,
-				199,
-				202
+				209,
+				213
 			]
 		}
 	]

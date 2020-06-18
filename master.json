@@ -290,7 +290,7 @@
 						},
 						{
 							"id": 199,
-							"name": "drip",
+							"name": "consume",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
@@ -300,14 +300,14 @@
 							"signatures": [
 								{
 									"id": 200,
-									"name": "drip",
+									"name": "consume",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {
 										"isExported": true
 									},
 									"comment": {
-										"shortText": "Drips the RateLimit bucket"
+										"shortText": "Consumes remaining limit from the RateLimit bucket"
 									},
 									"type": {
 										"type": "intrinsic",
@@ -319,7 +319,7 @@
 								{
 									"fileName": "src/RateLimit.ts",
 									"line": 54,
-									"character": 12
+									"character": 15
 								}
 							]
 						},
@@ -4044,7 +4044,7 @@
 										},
 										{
 											"id": 11,
-											"name": "reject",
+											"name": "revert",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {
@@ -4130,7 +4130,7 @@
 						},
 						{
 							"id": 4,
-							"name": "#reject",
+							"name": "#revert",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
@@ -4208,43 +4208,8 @@
 							"defaultValue": "false"
 						},
 						{
-							"id": 16,
-							"name": "reject",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isPublic": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 17,
-									"name": "reject",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {
-										"isExported": true
-									},
-									"comment": {
-										"shortText": "Marks this token as used and returns the token to the ratelimit (for use when the underlying task fails)."
-									},
-									"type": {
-										"type": "intrinsic",
-										"name": "this"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "src/RateLimitToken.ts",
-									"line": 42,
-									"character": 14
-								}
-							]
-						},
-						{
 							"id": 14,
-							"name": "resolve",
+							"name": "commit",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
@@ -4254,7 +4219,7 @@
 							"signatures": [
 								{
 									"id": 15,
-									"name": "resolve",
+									"name": "commit",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {
@@ -4265,7 +4230,7 @@
 									},
 									"type": {
 										"type": "intrinsic",
-										"name": "this"
+										"name": "void"
 									}
 								}
 							],
@@ -4273,7 +4238,42 @@
 								{
 									"fileName": "src/RateLimitToken.ts",
 									"line": 33,
-									"character": 15
+									"character": 14
+								}
+							]
+						},
+						{
+							"id": 16,
+							"name": "revert",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 17,
+									"name": "revert",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Marks this token as used and returns the token to the ratelimit (for use when the underlying task fails)."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/RateLimitToken.ts",
+									"line": 41,
+									"character": 14
 								}
 							]
 						}
@@ -4299,8 +4299,8 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								16,
-								14
+								14,
+								16
 							]
 						}
 					],

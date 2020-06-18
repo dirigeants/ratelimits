@@ -58,5 +58,8 @@
   },
   "peerDependencies": {
     "@klasa/timer-manager": "^0.0.1"
-  }
+  },
+  "files": [
+    "dist/src"
+  ]
 }

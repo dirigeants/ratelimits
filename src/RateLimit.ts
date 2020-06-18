@@ -49,9 +49,9 @@ export class RateLimit<K> {
 	}
 
 	/**
-	 * Drips the RateLimit bucket
+	 * Consumes remaining limit from the RateLimit bucket
 	 */
-	public drip(): this {
+	public consume(): this {
 		if (this.limited) throw new Error('Ratelimited');
 		if (this.expired) this.reset();
 
@@ -63,7 +63,7 @@ export class RateLimit<K> {
 	 * Takes a token that can be returned to the bucket if something goes wrong before this resets.
 	 */
 	public take(): RateLimitToken {
-		this.drip();
+		this.consume();
 		return new RateLimitToken(this.#expires, () => {
 			this.#remaining++;
 		});

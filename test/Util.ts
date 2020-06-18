@@ -33,54 +33,56 @@ ava('Set guard', (test): void => {
 	});
 });
 
-ava('Basic Drip', (test): void => {
+ava('Basic Consume', (test): void => {
 	const manager = new RateLimitManager(30000, 2);
 
 	const ratelimit = manager.acquire('one');
-	ratelimit.drip()
-		.drip();
-	test.throws(ratelimit.drip.bind(ratelimit), {
+	ratelimit.consume()
+		.consume();
+	test.throws(ratelimit.consume.bind(ratelimit), {
 		instanceOf: Error,
 		message: 'Ratelimited'
 	});
 });
 
-ava('Basic Take-resolve', (test): void => {
+ava('Basic Take-commit', (test): void => {
 	const manager = new RateLimitManager(30000);
 
 	const ratelimit = manager.acquire('one');
-	ratelimit.take().resolve();
+	ratelimit.take().commit();
 	test.throws(ratelimit.take.bind(ratelimit), {
 		instanceOf: Error,
 		message: 'Ratelimited'
 	});
 });
 
-ava('Basic Take-reject', (test): void => {
+ava('Basic Take-revert', (test): void => {
 	const manager = new RateLimitManager(30000);
 
 	const ratelimit = manager.acquire('one');
-	ratelimit.take().reject();
+	ratelimit.take().revert();
 	test.notThrows(ratelimit.take.bind(ratelimit));
 });
 
-ava('Double Take-resolve', (test): void => {
+ava('Double Take-commit', (test): void => {
 	const manager = new RateLimitManager(30000);
 
 	const ratelimit = manager.acquire('one');
-	const token = ratelimit.take().resolve();
-	test.throws(token.resolve.bind(token), {
+	const token = ratelimit.take();
+	token.commit();
+	test.throws(token.commit.bind(token), {
 		instanceOf: Error,
 		message: 'Token has already been used.'
 	});
 });
 
-ava('Double Take-reject', (test): void => {
+ava('Double Take-revert', (test): void => {
 	const manager = new RateLimitManager(30000);
 
 	const ratelimit = manager.acquire('one');
-	const token = ratelimit.take().reject();
-	test.throws(token.reject.bind(token), {
+	const token = ratelimit.take();
+	token.revert();
+	test.throws(token.revert.bind(token), {
 		instanceOf: Error,
 		message: 'Token has already been used.'
 	});
@@ -93,10 +95,10 @@ ava('Tokens expire', async (test): Promise<void> => {
 	const token = ratelimit.take();
 	// Sleep for 1.2 seconds because of how timers work.
 	await sleep(1200);
-	ratelimit.drip();
-	token.reject();
+	ratelimit.consume();
+	token.revert();
 
-	test.throws(ratelimit.drip.bind(ratelimit), {
+	test.throws(ratelimit.consume.bind(ratelimit), {
 		instanceOf: Error,
 		message: 'Ratelimited'
 	});
@@ -107,8 +109,8 @@ ava('Proper resetting', async (test): Promise<void> => {
 	const manager = new RateLimitManager(1000, 2);
 
 	const ratelimit = manager.acquire('one');
-	ratelimit.drip()
-		.drip();
+	ratelimit.consume()
+		.consume();
 
 	test.true(ratelimit.limited);
 
@@ -116,13 +118,13 @@ ava('Proper resetting', async (test): Promise<void> => {
 	await sleep(1200);
 
 	test.false(ratelimit.limited);
-	test.notThrows(ratelimit.drip.bind(ratelimit));
+	test.notThrows(ratelimit.consume.bind(ratelimit));
 });
 
 ava('Proper sweeping (everything)', async (test): Promise<void> => {
 	const manager = new RateLimitManager(1000, 2);
 
-	manager.acquire('one').drip();
+	manager.acquire('one').consume();
 
 	// Sleep for 1.2 seconds because of how timers work.
 	await sleep(1200);
@@ -135,11 +137,11 @@ ava('Proper sweeping (not everything)', async (test): Promise<void> => {
 	test.plan(2);
 	const manager = new RateLimitManager(1000, 2);
 
-	manager.acquire('one').drip();
+	manager.acquire('one').consume();
 
 	// Sleep for 1.2 seconds because of how timers work.
 	await sleep(1200);
-	manager.acquire('two').drip();
+	manager.acquire('two').consume();
 	manager.sweep();
 
 	test.false(manager.has('one'));

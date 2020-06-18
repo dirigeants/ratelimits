@@ -1,25 +1,29 @@
-export class RateLimit {
+import { RateLimitToken } from './RateLimitToken';
 
-	public bucket: number;
-	public cooldown: number;
-	private remaining: number;
-	private time: number;
+import type { RateLimitManager } from './RateLimitManager';
+
+export class RateLimit<K> {
 
 	/**
-	 * @param bucket The number of requests before this is limited
-	 * @param cooldown The amount of milliseconds for this ratelimit to expire
+	 * The RateLimitManager this Ratelimit is for
 	 */
-	public constructor(bucket: number, cooldown: number) {
-		/**
-		 * The number of requests before this is limited
-		 */
-		this.bucket = bucket;
+	private manager: RateLimitManager<K>;
 
-		/**
-		 * The amount of milliseconds for the ratelimit to expire
-		 */
-		this.cooldown = cooldown;
+	/**
+	 * The remaining times this RateLimit can be dripped before the RateLimit bucket is empty
+	 */
+	#remaining!: number;
 
+	/**
+	 * When this RateLimit is reset back to a full state
+	 */
+	#expires!: number;
+
+	/**
+	 * @param manager The manager for this RateLimit
+	 */
+	public constructor(manager: RateLimitManager<K>) {
+		this.manager = manager;
 		this.reset();
 	}
 
@@ -34,14 +38,14 @@ export class RateLimit {
 	 * Whether this RateLimit is limited or not
 	 */
 	public get limited(): boolean {
-		return !(this.remaining > 0 || this.expired);
+		return !(this.#remaining > 0 || this.expired);
 	}
 
 	/**
 	 * The remaining time in milliseconds before this RateLimit instance is reset
 	 */
 	public get remainingTime(): number {
-		return Math.max(this.time - Date.now(), 0);
+		return Math.max(this.#expires - Date.now(), 0);
 	}
 
 	/**
@@ -51,8 +55,18 @@ export class RateLimit {
 		if (this.limited) throw new Error('Ratelimited');
 		if (this.expired) this.reset();
 
-		this.remaining--;
+		this.#remaining--;
 		return this;
+	}
+
+	/**
+	 * Takes a token that can be returned to the bucket if something goes wrong before this resets.
+	 */
+	public take(): RateLimitToken {
+		this.drip();
+		return new RateLimitToken(this.#expires, () => {
+			this.#remaining++;
+		});
 	}
 
 	/**
@@ -66,11 +80,7 @@ export class RateLimit {
 	 * Resets the RateLimit's remaining uses back to full state
 	 */
 	public resetRemaining(): this {
-		/**
-		 * The remaining times this RateLimit can be dripped before the RateLimit bucket is empty
-		 */
-		this.remaining = this.bucket;
-
+		this.#remaining = this.manager.limit;
 		return this;
 	}
 
@@ -78,11 +88,7 @@ export class RateLimit {
 	 * Resets the RateLimit's reset time back to full state
 	 */
 	public resetTime(): this {
-		/**
-		 * When this RateLimit is reset back to a full state
-		 */
-		this.time = Date.now() + this.cooldown;
-
+		this.#expires = Date.now() + this.manager.time;
 		return this;
 	}
 

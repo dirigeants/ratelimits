@@ -1,88 +1,75 @@
 import { Cache } from '@klasa/cache';
+import { TimerManager } from '@klasa/timer-manager';
 import { RateLimit } from './RateLimit';
 
-export class RateLimitManager<K = string> extends Cache<K, RateLimit> {
-
-	private _bucket!: number;
-	private _cooldown!: number;
-	private sweepInterval!: NodeJS.Timer | null;
+export class RateLimitManager<K = string> extends Cache<K, RateLimit<K>> {
 
 	/**
-	 * @param bucket The amount of times a RateLimit can drip before it's limited
-	 * @param cooldown The amount of milliseconds for the ratelimits from this manager to expire
+	 * The amount of times a RateLimit can drip before it's limited.
 	 */
-	public constructor(bucket: number, cooldown: number) {
+	public limit: number;
+
+	/**
+	 * The amount of milliseconds for the ratelimits from this manager to expire.
+	 */
+	public time: number;
+
+	/**
+	 * The interval to sweep expired ratelimits.
+	 */
+	#sweepInterval!: NodeJS.Timer | null;
+
+	/**
+	 * @param limit The amount of times a RateLimit can drip before it's limited.
+	 * @param time The amount of milliseconds for the ratelimits from this manager to expire.
+	 */
+	public constructor(time: number, limit = 1) {
 		super();
 
-		Object.defineProperty(this, 'sweepInterval', { value: null, writable: true });
-		Object.defineProperty(this, '_bucket', { value: bucket, writable: true });
-		Object.defineProperty(this, '_cooldown', { value: cooldown, writable: true });
+		this.limit = limit;
+		this.time = time;
 	}
 
 	/**
-	 * The amount of times a RateLimit from this manager can drip before it's limited
-	 */
-	public get bucket(): number {
-		return this._bucket;
-	}
-
-	public set bucket(value: number) {
-		for (const ratelimit of this.values()) ratelimit.bucket = value;
-		this._bucket = value;
-	}
-
-	/**
-	 * The amount of milliseconds for the ratelimits from this manager to expire
-	 */
-	public get cooldown(): number {
-		return this._cooldown;
-	}
-
-	public set cooldown(value: number) {
-		for (const ratelimit of this.values()) ratelimit.cooldown = value;
-		this._cooldown = value;
-	}
-
-	/**
-	 * Gets a RateLimit from this manager or creates it if it does not exist
+	 * Gets a RateLimit from this manager or creates it if it does not exist.
 	 * @param id The id for the RateLimit
 	 */
-	public acquire(id: K): RateLimit {
+	public acquire(id: K): RateLimit<K> {
 		return this.get(id) || this.create(id);
 	}
 
 	/**
-	 * Creates a RateLimit for this manager
+	 * Creates a RateLimit for this manager.
 	 * @param id The id the RateLimit belongs to
 	 */
-	public create(id: K): RateLimit {
-		const ratelimit = new RateLimit(this._bucket, this._cooldown);
+	public create(id: K): RateLimit<K> {
+		const ratelimit = new RateLimit(this);
 		this.set(id, ratelimit);
 		return ratelimit;
 	}
 
 	/**
-	 * Wraps Collection's set method to set interval to sweep inactive RateLimits
+	 * Wraps Collection's set method to set interval to sweep inactive RateLimits.
 	 * @param id The id the RateLimit belongs to
 	 * @param ratelimit The RateLimit to set
 	 */
-	public set(id: K, ratelimit: RateLimit): this {
+	public set(id: K, ratelimit: RateLimit<K>): this {
 		if (!(ratelimit instanceof RateLimit)) throw new Error('Invalid RateLimit');
-		if (!this.sweepInterval) this.sweepInterval = setInterval(this.sweep.bind(this), 30000);
+		if (!this.#sweepInterval) this.#sweepInterval = TimerManager.setInterval(this.sweep.bind(this), 30000);
 		return super.set(id, ratelimit);
 	}
 
 	/**
-	 * Wraps Collection's sweep method to clear the interval when this manager is empty
+	 * Wraps Collection's sweep method to clear the interval when this manager is empty.
 	 * @param fn The filter function
 	 * @param thisArg The this for the sweep
 	 */
-	public sweep(fn: (value: RateLimit, key: K, collection: this) => boolean = (rl): boolean => rl.expired, thisArg?: any): number {
+	public sweep(fn: (value: RateLimit<K>, key: K, collection: this) => boolean = (rl): boolean => rl.expired, thisArg?: any): number {
 		const amount = super.sweep(fn, thisArg);
 
 		if (this.size === 0) {
-			clearInterval(this.sweepInterval);
-			this.sweepInterval = null;
+			TimerManager.clearInterval(this.#sweepInterval as NodeJS.Timer);
+			this.#sweepInterval = null;
 		}
 
 		return amount;

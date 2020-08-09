@@ -7,7 +7,7 @@
 	"children": [
 		{
 			"id": 184,
-			"name": "\"src/RateLimit\"",
+			"name": "\"RateLimit\"",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {
@@ -531,7 +531,7 @@
 		},
 		{
 			"id": 18,
-			"name": "\"src/RateLimitManager\"",
+			"name": "\"RateLimitManager\"",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {
@@ -3985,7 +3985,7 @@
 		},
 		{
 			"id": 1,
-			"name": "\"src/RateLimitToken\"",
+			"name": "\"RateLimitToken\"",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {
@@ -4332,7 +4332,7 @@
 		},
 		{
 			"id": 209,
-			"name": "\"src/index\"",
+			"name": "\"index\"",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {
@@ -4389,23 +4389,6 @@
 					"character": 0
 				}
 			]
-		},
-		{
-			"id": 213,
-			"name": "\"test/Util\"",
-			"kind": 1,
-			"kindString": "Module",
-			"flags": {
-				"isExported": true
-			},
-			"originalName": "/home/runner/work/ratelimits/ratelimits/test/Util.ts",
-			"sources": [
-				{
-					"fileName": "test/Util.ts",
-					"line": 1,
-					"character": 0
-				}
-			]
 		}
 	],
 	"groups": [
@@ -4416,8 +4399,7 @@
 				184,
 				18,
 				1,
-				209,
-				213
+				209
 			]
 		}
 	]

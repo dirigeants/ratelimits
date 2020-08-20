@@ -763,24 +763,7 @@
 										"type": "union",
 										"types": [
 											{
-												"type": "tuple",
-												"elements": [
-													{
-														"type": "typeParameter",
-														"name": "K"
-													},
-													{
-														"type": "reference",
-														"id": 185,
-														"typeArguments": [
-															{
-																"type": "typeParameter",
-																"name": "K"
-															}
-														],
-														"name": "RateLimit"
-													}
-												]
+												"type": "tuple"
 											},
 											{
 												"type": "intrinsic",
@@ -954,24 +937,7 @@
 										"type": "union",
 										"types": [
 											{
-												"type": "tuple",
-												"elements": [
-													{
-														"type": "typeParameter",
-														"name": "K"
-													},
-													{
-														"type": "reference",
-														"id": 185,
-														"typeArguments": [
-															{
-																"type": "typeParameter",
-																"name": "K"
-															}
-														],
-														"name": "RateLimit"
-													}
-												]
+												"type": "tuple"
 											},
 											{
 												"type": "intrinsic",
@@ -2079,24 +2045,7 @@
 										"type": "union",
 										"types": [
 											{
-												"type": "tuple",
-												"elements": [
-													{
-														"type": "typeParameter",
-														"name": "K"
-													},
-													{
-														"type": "reference",
-														"id": 185,
-														"typeArguments": [
-															{
-																"type": "typeParameter",
-																"name": "K"
-															}
-														],
-														"name": "RateLimit"
-													}
-												]
+												"type": "tuple"
 											},
 											{
 												"type": "intrinsic",

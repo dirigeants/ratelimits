@@ -763,7 +763,32 @@
 										"type": "union",
 										"types": [
 											{
-												"type": "tuple"
+												"type": "tuple",
+												"elements": [
+													{
+														"type": "typeParameter",
+														"name": "K",
+														"default": {
+															"type": "intrinsic",
+															"name": "string"
+														}
+													},
+													{
+														"type": "reference",
+														"id": 185,
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "K",
+																"default": {
+																	"type": "intrinsic",
+																	"name": "string"
+																}
+															}
+														],
+														"name": "RateLimit"
+													}
+												]
 											},
 											{
 												"type": "intrinsic",
@@ -819,7 +844,11 @@
 										"types": [
 											{
 												"type": "typeParameter",
-												"name": "K"
+												"name": "K",
+												"default": {
+													"type": "intrinsic",
+													"name": "string"
+												}
 											},
 											{
 												"type": "intrinsic",
@@ -879,7 +908,11 @@
 												"typeArguments": [
 													{
 														"type": "typeParameter",
-														"name": "K"
+														"name": "K",
+														"default": {
+															"type": "intrinsic",
+															"name": "string"
+														}
 													}
 												],
 												"name": "RateLimit"
@@ -937,7 +970,32 @@
 										"type": "union",
 										"types": [
 											{
-												"type": "tuple"
+												"type": "tuple",
+												"elements": [
+													{
+														"type": "typeParameter",
+														"name": "K",
+														"default": {
+															"type": "intrinsic",
+															"name": "string"
+														}
+													},
+													{
+														"type": "reference",
+														"id": 185,
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "K",
+																"default": {
+																	"type": "intrinsic",
+																	"name": "string"
+																}
+															}
+														],
+														"name": "RateLimit"
+													}
+												]
 											},
 											{
 												"type": "intrinsic",
@@ -993,7 +1051,11 @@
 										"types": [
 											{
 												"type": "typeParameter",
-												"name": "K"
+												"name": "K",
+												"default": {
+													"type": "intrinsic",
+													"name": "string"
+												}
 											},
 											{
 												"type": "intrinsic",
@@ -1053,7 +1115,11 @@
 												"typeArguments": [
 													{
 														"type": "typeParameter",
-														"name": "K"
+														"name": "K",
+														"default": {
+															"type": "intrinsic",
+															"name": "string"
+														}
 													}
 												],
 												"name": "RateLimit"
@@ -1155,7 +1221,11 @@
 											},
 											"type": {
 												"type": "typeParameter",
-												"name": "K"
+												"name": "K",
+												"default": {
+													"type": "intrinsic",
+													"name": "string"
+												}
 											}
 										}
 									],
@@ -1165,7 +1235,11 @@
 										"typeArguments": [
 											{
 												"type": "typeParameter",
-												"name": "K"
+												"name": "K",
+												"default": {
+													"type": "intrinsic",
+													"name": "string"
+												}
 											}
 										],
 										"name": "RateLimit"
@@ -1246,7 +1320,11 @@
 										"typeArguments": [
 											{
 												"type": "typeParameter",
-												"name": "K"
+												"name": "K",
+												"default": {
+													"type": "intrinsic",
+													"name": "string"
+												}
 											},
 											{
 												"type": "reference",
@@ -1254,7 +1332,11 @@
 												"typeArguments": [
 													{
 														"type": "typeParameter",
-														"name": "K"
+														"name": "K",
+														"default": {
+															"type": "intrinsic",
+															"name": "string"
+														}
 													}
 												],
 												"name": "RateLimit"
@@ -1322,7 +1404,11 @@
 													"typeArguments": [
 														{
 															"type": "typeParameter",
-															"name": "K"
+															"name": "K",
+															"default": {
+																"type": "intrinsic",
+																"name": "string"
+															}
 														},
 														{
 															"type": "reference",
@@ -1330,7 +1416,11 @@
 															"typeArguments": [
 																{
 																	"type": "typeParameter",
-																	"name": "K"
+																	"name": "K",
+																	"default": {
+																		"type": "intrinsic",
+																		"name": "string"
+																	}
 																}
 															],
 															"name": "RateLimit"
@@ -1346,7 +1436,11 @@
 										"typeArguments": [
 											{
 												"type": "typeParameter",
-												"name": "K"
+												"name": "K",
+												"default": {
+													"type": "intrinsic",
+													"name": "string"
+												}
 											},
 											{
 												"type": "reference",
@@ -1354,7 +1448,11 @@
 												"typeArguments": [
 													{
 														"type": "typeParameter",
-														"name": "K"
+														"name": "K",
+														"default": {
+															"type": "intrinsic",
+															"name": "string"
+														}
 													}
 												],
 												"name": "RateLimit"
@@ -1417,7 +1515,11 @@
 											},
 											"type": {
 												"type": "typeParameter",
-												"name": "K"
+												"name": "K",
+												"default": {
+													"type": "intrinsic",
+													"name": "string"
+												}
 											}
 										}
 									],
@@ -1427,7 +1529,11 @@
 										"typeArguments": [
 											{
 												"type": "typeParameter",
-												"name": "K"
+												"name": "K",
+												"default": {
+													"type": "intrinsic",
+													"name": "string"
+												}
 											}
 										],
 										"name": "RateLimit"
@@ -1470,7 +1576,11 @@
 											},
 											"type": {
 												"type": "typeParameter",
-												"name": "K"
+												"name": "K",
+												"default": {
+													"type": "intrinsic",
+													"name": "string"
+												}
 											}
 										}
 									],
@@ -1535,7 +1645,11 @@
 												"typeArguments": [
 													{
 														"type": "typeParameter",
-														"name": "K"
+														"name": "K",
+														"default": {
+															"type": "intrinsic",
+															"name": "string"
+														}
 													},
 													{
 														"type": "reference",
@@ -1543,7 +1657,11 @@
 														"typeArguments": [
 															{
 																"type": "typeParameter",
-																"name": "K"
+																"name": "K",
+																"default": {
+																	"type": "intrinsic",
+																	"name": "string"
+																}
 															}
 														],
 														"name": "RateLimit"
@@ -1643,7 +1761,11 @@
 																		"typeArguments": [
 																			{
 																				"type": "typeParameter",
-																				"name": "K"
+																				"name": "K",
+																				"default": {
+																					"type": "intrinsic",
+																					"name": "string"
+																				}
 																			}
 																		],
 																		"name": "RateLimit"
@@ -1659,7 +1781,11 @@
 																	},
 																	"type": {
 																		"type": "typeParameter",
-																		"name": "K"
+																		"name": "K",
+																		"default": {
+																			"type": "intrinsic",
+																			"name": "string"
+																		}
 																	}
 																},
 																{
@@ -1800,7 +1926,11 @@
 																		"typeArguments": [
 																			{
 																				"type": "typeParameter",
-																				"name": "K"
+																				"name": "K",
+																				"default": {
+																					"type": "intrinsic",
+																					"name": "string"
+																				}
 																			}
 																		],
 																		"name": "RateLimit"
@@ -1816,7 +1946,11 @@
 																	},
 																	"type": {
 																		"type": "typeParameter",
-																		"name": "K"
+																		"name": "K",
+																		"default": {
+																			"type": "intrinsic",
+																			"name": "string"
+																		}
 																	}
 																},
 																{
@@ -1872,7 +2006,11 @@
 										"typeArguments": [
 											{
 												"type": "typeParameter",
-												"name": "K"
+												"name": "K",
+												"default": {
+													"type": "intrinsic",
+													"name": "string"
+												}
 											},
 											{
 												"type": "reference",
@@ -1880,7 +2018,11 @@
 												"typeArguments": [
 													{
 														"type": "typeParameter",
-														"name": "K"
+														"name": "K",
+														"default": {
+															"type": "intrinsic",
+															"name": "string"
+														}
 													}
 												],
 												"name": "RateLimit"
@@ -1974,7 +2116,11 @@
 																		"typeArguments": [
 																			{
 																				"type": "typeParameter",
-																				"name": "K"
+																				"name": "K",
+																				"default": {
+																					"type": "intrinsic",
+																					"name": "string"
+																				}
 																			}
 																		],
 																		"name": "RateLimit"
@@ -1990,7 +2136,11 @@
 																	},
 																	"type": {
 																		"type": "typeParameter",
-																		"name": "K"
+																		"name": "K",
+																		"default": {
+																			"type": "intrinsic",
+																			"name": "string"
+																		}
 																	}
 																},
 																{
@@ -2045,7 +2195,32 @@
 										"type": "union",
 										"types": [
 											{
-												"type": "tuple"
+												"type": "tuple",
+												"elements": [
+													{
+														"type": "typeParameter",
+														"name": "K",
+														"default": {
+															"type": "intrinsic",
+															"name": "string"
+														}
+													},
+													{
+														"type": "reference",
+														"id": 185,
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "K",
+																"default": {
+																	"type": "intrinsic",
+																	"name": "string"
+																}
+															}
+														],
+														"name": "RateLimit"
+													}
+												]
 											},
 											{
 												"type": "intrinsic",
@@ -2139,7 +2314,11 @@
 																		"typeArguments": [
 																			{
 																				"type": "typeParameter",
-																				"name": "K"
+																				"name": "K",
+																				"default": {
+																					"type": "intrinsic",
+																					"name": "string"
+																				}
 																			}
 																		],
 																		"name": "RateLimit"
@@ -2155,7 +2334,11 @@
 																	},
 																	"type": {
 																		"type": "typeParameter",
-																		"name": "K"
+																		"name": "K",
+																		"default": {
+																			"type": "intrinsic",
+																			"name": "string"
+																		}
 																	}
 																},
 																{
@@ -2211,7 +2394,11 @@
 										"types": [
 											{
 												"type": "typeParameter",
-												"name": "K"
+												"name": "K",
+												"default": {
+													"type": "intrinsic",
+													"name": "string"
+												}
 											},
 											{
 												"type": "intrinsic",
@@ -2305,7 +2492,11 @@
 																		"typeArguments": [
 																			{
 																				"type": "typeParameter",
-																				"name": "K"
+																				"name": "K",
+																				"default": {
+																					"type": "intrinsic",
+																					"name": "string"
+																				}
 																			}
 																		],
 																		"name": "RateLimit"
@@ -2321,7 +2512,11 @@
 																	},
 																	"type": {
 																		"type": "typeParameter",
-																		"name": "K"
+																		"name": "K",
+																		"default": {
+																			"type": "intrinsic",
+																			"name": "string"
+																		}
 																	}
 																},
 																{
@@ -2381,7 +2576,11 @@
 												"typeArguments": [
 													{
 														"type": "typeParameter",
-														"name": "K"
+														"name": "K",
+														"default": {
+															"type": "intrinsic",
+															"name": "string"
+														}
 													}
 												],
 												"name": "RateLimit"
@@ -2472,7 +2671,11 @@
 																		"typeArguments": [
 																			{
 																				"type": "typeParameter",
-																				"name": "K"
+																				"name": "K",
+																				"default": {
+																					"type": "intrinsic",
+																					"name": "string"
+																				}
 																			}
 																		],
 																		"name": "RateLimit"
@@ -2488,7 +2691,11 @@
 																	},
 																	"type": {
 																		"type": "typeParameter",
-																		"name": "K"
+																		"name": "K",
+																		"default": {
+																			"type": "intrinsic",
+																			"name": "string"
+																		}
 																	}
 																},
 																{
@@ -2504,7 +2711,11 @@
 																		"typeArguments": [
 																			{
 																				"type": "typeParameter",
-																				"name": "K"
+																				"name": "K",
+																				"default": {
+																					"type": "intrinsic",
+																					"name": "string"
+																				}
 																			},
 																			{
 																				"type": "reference",
@@ -2512,7 +2723,11 @@
 																				"typeArguments": [
 																					{
 																						"type": "typeParameter",
-																						"name": "K"
+																						"name": "K",
+																						"default": {
+																							"type": "intrinsic",
+																							"name": "string"
+																						}
 																					}
 																				],
 																				"name": "RateLimit"
@@ -2605,7 +2820,11 @@
 											},
 											"type": {
 												"type": "typeParameter",
-												"name": "K"
+												"name": "K",
+												"default": {
+													"type": "intrinsic",
+													"name": "string"
+												}
 											}
 										}
 									],
@@ -2618,7 +2837,11 @@
 												"typeArguments": [
 													{
 														"type": "typeParameter",
-														"name": "K"
+														"name": "K",
+														"default": {
+															"type": "intrinsic",
+															"name": "string"
+														}
 													}
 												],
 												"name": "RateLimit"
@@ -2677,7 +2900,11 @@
 											},
 											"type": {
 												"type": "typeParameter",
-												"name": "K"
+												"name": "K",
+												"default": {
+													"type": "intrinsic",
+													"name": "string"
+												}
 											}
 										}
 									],
@@ -2782,7 +3009,11 @@
 																		"typeArguments": [
 																			{
 																				"type": "typeParameter",
-																				"name": "K"
+																				"name": "K",
+																				"default": {
+																					"type": "intrinsic",
+																					"name": "string"
+																				}
 																			}
 																		],
 																		"name": "RateLimit"
@@ -2798,7 +3029,11 @@
 																	},
 																	"type": {
 																		"type": "typeParameter",
-																		"name": "K"
+																		"name": "K",
+																		"default": {
+																			"type": "intrinsic",
+																			"name": "string"
+																		}
 																	}
 																},
 																{
@@ -2817,7 +3052,11 @@
 															],
 															"type": {
 																"type": "typeParameter",
-																"name": "T"
+																"name": "T",
+																"default": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
 															}
 														}
 													],
@@ -2853,7 +3092,11 @@
 										"type": "array",
 										"elementType": {
 											"type": "typeParameter",
-											"name": "T"
+											"name": "T",
+											"default": {
+												"type": "intrinsic",
+												"name": "any"
+											}
 										}
 									},
 									"inheritedFrom": {
@@ -2966,7 +3209,11 @@
 																		"typeArguments": [
 																			{
 																				"type": "typeParameter",
-																				"name": "K"
+																				"name": "K",
+																				"default": {
+																					"type": "intrinsic",
+																					"name": "string"
+																				}
 																			}
 																		],
 																		"name": "RateLimit"
@@ -2982,7 +3229,11 @@
 																	},
 																	"type": {
 																		"type": "typeParameter",
-																		"name": "K"
+																		"name": "K",
+																		"default": {
+																			"type": "intrinsic",
+																			"name": "string"
+																		}
 																	}
 																},
 																{
@@ -3108,7 +3359,11 @@
 											},
 											"type": {
 												"type": "typeParameter",
-												"name": "K"
+												"name": "K",
+												"default": {
+													"type": "intrinsic",
+													"name": "string"
+												}
 											}
 										},
 										{
@@ -3128,7 +3383,11 @@
 												"typeArguments": [
 													{
 														"type": "typeParameter",
-														"name": "K"
+														"name": "K",
+														"default": {
+															"type": "intrinsic",
+															"name": "string"
+														}
 													}
 												],
 												"name": "RateLimit"
@@ -3223,7 +3482,11 @@
 																		"typeArguments": [
 																			{
 																				"type": "typeParameter",
-																				"name": "K"
+																				"name": "K",
+																				"default": {
+																					"type": "intrinsic",
+																					"name": "string"
+																				}
 																			}
 																		],
 																		"name": "RateLimit"
@@ -3239,7 +3502,11 @@
 																	},
 																	"type": {
 																		"type": "typeParameter",
-																		"name": "K"
+																		"name": "K",
+																		"default": {
+																			"type": "intrinsic",
+																			"name": "string"
+																		}
 																	}
 																},
 																{
@@ -3388,7 +3655,11 @@
 																				"typeArguments": [
 																					{
 																						"type": "typeParameter",
-																						"name": "K"
+																						"name": "K",
+																						"default": {
+																							"type": "intrinsic",
+																							"name": "string"
+																						}
 																					}
 																				],
 																				"name": "RateLimit"
@@ -3408,7 +3679,11 @@
 																				"typeArguments": [
 																					{
 																						"type": "typeParameter",
-																						"name": "K"
+																						"name": "K",
+																						"default": {
+																							"type": "intrinsic",
+																							"name": "string"
+																						}
 																					}
 																				],
 																				"name": "RateLimit"
@@ -3555,7 +3830,11 @@
 																				"typeArguments": [
 																					{
 																						"type": "typeParameter",
-																						"name": "K"
+																						"name": "K",
+																						"default": {
+																							"type": "intrinsic",
+																							"name": "string"
+																						}
 																					}
 																				],
 																				"name": "RateLimit"
@@ -3575,7 +3854,11 @@
 																				"typeArguments": [
 																					{
 																						"type": "typeParameter",
-																						"name": "K"
+																						"name": "K",
+																						"default": {
+																							"type": "intrinsic",
+																							"name": "string"
+																						}
 																					}
 																				],
 																				"name": "RateLimit"
@@ -3629,7 +3912,11 @@
 										"typeArguments": [
 											{
 												"type": "typeParameter",
-												"name": "K"
+												"name": "K",
+												"default": {
+													"type": "intrinsic",
+													"name": "string"
+												}
 											},
 											{
 												"type": "reference",
@@ -3637,7 +3924,11 @@
 												"typeArguments": [
 													{
 														"type": "typeParameter",
-														"name": "K"
+														"name": "K",
+														"default": {
+															"type": "intrinsic",
+															"name": "string"
+														}
 													}
 												],
 												"name": "RateLimit"
@@ -3732,7 +4023,11 @@
 																		"typeArguments": [
 																			{
 																				"type": "typeParameter",
-																				"name": "K"
+																				"name": "K",
+																				"default": {
+																					"type": "intrinsic",
+																					"name": "string"
+																				}
 																			}
 																		],
 																		"name": "RateLimit"
@@ -3748,7 +4043,11 @@
 																	},
 																	"type": {
 																		"type": "typeParameter",
-																		"name": "K"
+																		"name": "K",
+																		"default": {
+																			"type": "intrinsic",
+																			"name": "string"
+																		}
 																	}
 																},
 																{
@@ -3896,7 +4195,11 @@
 							"typeArguments": [
 								{
 									"type": "typeParameter",
-									"name": "K"
+									"name": "K",
+									"default": {
+										"type": "intrinsic",
+										"name": "string"
+									}
 								},
 								{
 									"type": "reference",
@@ -3904,7 +4207,11 @@
 									"typeArguments": [
 										{
 											"type": "typeParameter",
-											"name": "K"
+											"name": "K",
+											"default": {
+												"type": "intrinsic",
+												"name": "string"
+											}
 										}
 									],
 									"name": "RateLimit"

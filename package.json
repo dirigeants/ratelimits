@@ -25,7 +25,7 @@
     "@klasa/utils": "^0.1.0",
     "@klasa/timer-manager": "^0.0.1",
     "@types/node": "^14.14.13",
-    "@typescript-eslint/eslint-plugin": "^4.28.2",
+    "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@typescript-eslint/parser": "^4.28.3",
     "ava": "^3.15.0",
     "eslint": "^7.30.0",
